@@ -1,0 +1,83 @@
+{
+  "metadata": {
+    "title": "the dijker — move yourself",
+    "description": "De dijker is een nieuw type voertuig dat tegelijk heel vertrouwd aanvoelt. Een high-tech voertuig met zijn unieke spiral belt drive multispeed®."
+  },
+  "nav": {
+    "home": "Home",
+    "dijker": "De dijker",
+    "technique": "Techniek",
+    "creator": "Uitvinder",
+    "investing": "Investeren",
+    "contact": "Contact",
+    "language": "Taal"
+  },
+  "hero": {
+    "slogan": "move yourself",
+    "title": "the dijker",
+    "lead": "Alsof hij altijd al bestaan heeft: de dijker. Een nieuw type voertuig dat tegelijk heel vertrouwd aanvoelt. Het ademt nostalgie.",
+    "sub": "Maar laat de klassieke lijnen je niet misleiden — de dijker is een high-tech voertuig met zijn unieke spiral belt drive multispeed®.",
+    "cta": "Bekijk de video",
+    "contactCta": "Neem contact op"
+  },
+  "dijker": {
+    "heading": "De dijker",
+    "intro": "Vijf unieke eigenschappen. Lees maar.",
+    "body1": "De dijker is een nieuw type voertuig. Hij heeft vier wielen en een klein stuur dat je indrukt om te remmen. Hij heeft pedalen voor de aandrijving die recht heen en weer bewegen, links en rechts onafhankelijk. De carrosserie bestaat uit een handige onverdeelde bagageruimte (de boot) en een neuskap — beide eenvoudig af te nemen.",
+    "body2": "Het is een nieuw ontworpen alternatief voor forenzen die nu met de auto, motor of het openbaar vervoer reizen. Comfortabel, droog en aangenaam. Dankzij de zithouding kom je uitgerust en ontspannen aan.",
+    "body3": "Er zijn geen remhendels, en ook geen hendels om te schakelen: je verstelt door je tenen naar achteren te bewegen. Alle hendels zijn wegontworpen. Een dijker rijden is een nieuwe ervaring. Een dijker rijden is leuk.",
+    "props": {
+      "fast": { "title": "Snel", "text": "Snelle acceleratie vanuit stilstand, en aerodynamica die je op snelheid helpt." },
+      "free": { "title": "Vrij", "text": "Open ontwerp — makkelijk in- en uitstappen. Je voelt je nooit opgesloten." },
+      "comfort": { "title": "Comfort", "text": "Een ontspannen zithouding zodat je uitgerust aankomt. Ventilatie houdt je droog." },
+      "protects": { "title": "Beschermt", "text": "Vier sterke wielen en een stevig chassis. Een mini-poncho tegen regen, plus een designvlag en opvallende kleuren voor zichtbaarheid." },
+      "fun": { "title": "Plezier", "text": "Geen hendels, intuïtieve bediening — een echt nieuwe rijervaring." }
+    }
+  },
+  "technique": {
+    "heading": "De techniek",
+    "chassisTitle": "Het chassis",
+    "chassis": "De basis van de dijker is het chassis: een vlak element dat vering, stuurhuis, pedaalgeleiding en remverdeling integreert. Het beschermt ook de remkabels, de elektra en de aandrijfriemvoeringen met omhulling. Sterk en licht.",
+    "driveTitle": "spiral belt drive multispeed®",
+    "drive": "Het integrale aandrijfsysteem combineert aandrijving met een versnellingssysteem. De linker- of rechterriem wordt spiraalsgewijs om een wielas gewikkeld; de diameter neemt toe of af door riemlengte toe te voegen of weg te halen tijdens het duwen. Je kunt zelfs bij stilstand terugschakelen — onmogelijk met een derailleur op de fiets.",
+    "brakesTitle": "Remmen",
+    "brakes": "Alle vier de wielen hebben lichtmetalen trommelremmen, bediend door de stuurkolom met het stuur in te drukken. Onverwacht, maar intuïtief en veilig in de praktijk.",
+    "awardTitle": "Prijs",
+    "award": "Derde prijs bij de uitvinderswedstrijd van de Germersheim Spezialradmesse 2019.",
+    "awardLink": "Bekijk de wedstrijd"
+  },
+  "creator": {
+    "heading": "De uitvinder",
+    "name": "Peter-Paul van der Ven",
+    "role": "Ingenieur & uitvinder van de dijker",
+    "body1": "Peter-Paul is gepassioneerd en toekomstgericht, met uitgebreide kennis van fysica, materialen, tribologie, en het ontwerpen en testen van (sandwich)constructies en lineaire pedaalmechanismen.",
+    "body2": "De dijker is voor hem een jongensdroom die uitkomt. Van kinds af aan zag hij onze kwetsbare atmosfeer vervuilen. Hij was vastbesloten om kleine voertuigen te maken met weinig of geen uitlaatgassen — voertuigen die hij zelf graag zou rijden, en die uiteindelijk zelfs autobezitters zouden verkiezen.",
+    "downloads": "Pers",
+    "download1": "EHPVA magazine — dec. 2020 (PDF)",
+    "download2": "Ligfiets& — sept. 2020, Nederlands (PDF)"
+  },
+  "investing": {
+    "heading": "Investeren",
+    "body": "De dijker is het resultaat van visie en doorzettingsvermogen. De volgende stap is verdere ontwikkeling en marketing. Wil je investeren in de dijker, of een grote rol spelen in het project? Neem dan contact op.",
+    "cta": "Neem contact op"
+  },
+  "contact": {
+    "heading": "We horen graag van je",
+    "sub": "Vragen, ideeën, of interesse om te investeren? Stuur een bericht.",
+    "firstName": "Voornaam",
+    "lastName": "Achternaam",
+    "email": "E-mailadres",
+    "phone": "Telefoonnummer (optioneel)",
+    "message": "Bericht",
+    "required": "Verplicht veld",
+    "send": "Verstuur bericht",
+    "sending": "Versturen…",
+    "success": "Bedankt! Je bericht is verstuurd.",
+    "error": "Er ging iets mis. Probeer het opnieuw."
+  },
+  "footer": {
+    "tagline": "move yourself",
+    "trademark": "spiral belt drive multispeed® is een geregistreerd handelsmerk.",
+    "rights": "Alle rechten voorbehouden."
+  }
+}
