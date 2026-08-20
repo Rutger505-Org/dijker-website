@@ -7,7 +7,6 @@ import { Investing } from "@/components/site/investing";
 import { Contact } from "@/components/site/contact";
 import { Footer } from "@/components/site/footer";
 import { setRequestLocale } from "next-intl/server";
-import type { Locale } from "next-intl";
 
 export default async function HomePage({
   params,
@@ -15,7 +14,7 @@ export default async function HomePage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  setRequestLocale(locale as Locale);
+  setRequestLocale(locale);
 
   return (
     <>

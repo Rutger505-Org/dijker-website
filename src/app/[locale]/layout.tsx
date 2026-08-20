@@ -4,7 +4,7 @@ import "../globals.css";
 
 import { routing } from "@/i18n/routing";
 import { TRPCReactProvider } from "@/trpc/react";
-import { hasLocale, type Locale } from "next-intl";
+import { hasLocale } from "next-intl";
 import { NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
@@ -45,7 +45,7 @@ export default async function LocaleLayout({
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
-  setRequestLocale(locale as Locale);
+  setRequestLocale(locale);
 
   return (
     <html lang={locale} className={geistSans.variable}>
