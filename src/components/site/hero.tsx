@@ -9,7 +9,7 @@ export function Hero() {
     <section id="top" className="relative overflow-hidden">
       <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 pb-16 pt-28 md:grid-cols-2 md:pb-24 md:pt-36">
         <div className="space-y-6">
-          <p className="text-sm font-medium uppercase tracking-[0.3em] text-muted-foreground">
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">
             {t("slogan")}
           </p>
           <h1 className="text-5xl font-semibold tracking-tight md:text-6xl">
