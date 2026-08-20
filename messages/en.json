@@ -1,0 +1,83 @@
+{
+  "metadata": {
+    "title": "the dijker — move yourself",
+    "description": "The dijker is a new type of vehicle that feels quite familiar at the same time. A high-tech vehicle with its unique spiral belt drive multispeed®."
+  },
+  "nav": {
+    "home": "Home",
+    "dijker": "The dijker",
+    "technique": "Technique",
+    "creator": "Creator",
+    "investing": "Investing",
+    "contact": "Contact",
+    "language": "Language"
+  },
+  "hero": {
+    "slogan": "move yourself",
+    "title": "the dijker",
+    "lead": "As if it has always existed: the dijker. A new type of vehicle that feels quite familiar at the same time. It breathes nostalgia.",
+    "sub": "But don't let the classic lines fool you — the dijker is a high-tech vehicle with its unique spiral belt drive multispeed®.",
+    "cta": "Watch the video",
+    "contactCta": "Get in touch"
+  },
+  "dijker": {
+    "heading": "The dijker",
+    "intro": "Five unique properties. Just read.",
+    "body1": "The dijker is a new type of vehicle. It has four wheels and a small steering wheel that you push to brake. It has pedals for the drive that move back and forth in a straight line, left and right independently. The body consists of a handy undivided luggage compartment (the boot) and a nose cover — both easily taken off.",
+    "body2": "It is a newly designed alternative for commuters who now travel by car, motorcycle or public transport. Comfortable, dry and pleasant. Thanks to the sitting position you arrive rested and relaxed.",
+    "body3": "There are no brake handles, and no handles for changing gear either: you adjust by moving your toes backwards. All handles have been designed away. To ride a dijker is a new experience. To ride a dijker is fun.",
+    "props": {
+      "fast": { "title": "Fast", "text": "Quick acceleration from standstill, and aerodynamics that help you at speed." },
+      "free": { "title": "Free", "text": "Open design — easy to get in and out. You'll never feel trapped." },
+      "comfort": { "title": "Comfort", "text": "A relaxed sitting position so you arrive rested. Ventilation keeps you dry." },
+      "protects": { "title": "Protects", "text": "Four strong wheels and a sturdy chassis. A mini poncho for rain, plus a design flag and striking colors for visibility." },
+      "fun": { "title": "Fun", "text": "No handles, intuitive controls — a genuinely new riding experience." }
+    }
+  },
+  "technique": {
+    "heading": "The technique",
+    "chassisTitle": "The chassis",
+    "chassis": "The basis of the dijker is the chassis: a flat element that integrates suspension, steering rack, pedal guidance and brake distribution. It also protects the brake cables, the electrics and the drive belt linings with sheathing. Strong and light.",
+    "driveTitle": "spiral belt drive multispeed®",
+    "drive": "The integral drive system combines drive with a gear system. The left or right belt is wound around a wheel axle in a spiral; the diameter increases or decreases by adding or removing belt length while pushing. You can even downshift at a standstill — impossible with a derailleur on a bicycle.",
+    "brakesTitle": "Brakes",
+    "brakes": "All four wheels have light metal drum brakes, operated by pressing the steering column with the steering wheel. Unexpected, but intuitive and safe in practice.",
+    "awardTitle": "Award",
+    "award": "Third prize at the Germersheim Spezialradmesse 2019 inventor competition.",
+    "awardLink": "See the competition"
+  },
+  "creator": {
+    "heading": "The creator",
+    "name": "Peter-Paul van der Ven",
+    "role": "Engineer & inventor of the dijker",
+    "body1": "Peter-Paul is passionate and future-oriented, with extensive knowledge of physics, materials, tribology, and the design and testing of (sandwich) structures and linear pedal mechanisms.",
+    "body2": "The dijker is a boy's dream come true for him. From childhood he watched our fragile atmosphere pollute. He was determined to make small vehicles with little or no exhaust fumes — vehicles he would really like to ride, and that in the end even car owners would prefer.",
+    "downloads": "Press",
+    "download1": "EHPVA magazine — Dec. 2020 (PDF)",
+    "download2": "Ligfiets& — Sept. 2020, Dutch (PDF)"
+  },
+  "investing": {
+    "heading": "Investing",
+    "body": "The dijker is the result of vision and perseverance. The next step is further development and marketing. Would you like to invest in the dijker, or take a major role in the project? Then get in touch.",
+    "cta": "Contact us"
+  },
+  "contact": {
+    "heading": "We'd like to hear from you",
+    "sub": "Questions, ideas, or interested in investing? Send a message.",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "email": "Email",
+    "phone": "Phone (optional)",
+    "message": "Message",
+    "required": "Required field",
+    "send": "Send message",
+    "sending": "Sending…",
+    "success": "Thanks! Your message has been sent.",
+    "error": "Something went wrong. Please try again."
+  },
+  "footer": {
+    "tagline": "move yourself",
+    "trademark": "spiral belt drive multispeed® is a registered trademark.",
+    "rights": "All rights reserved."
+  }
+}
