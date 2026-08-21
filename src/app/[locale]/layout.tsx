@@ -116,7 +116,6 @@ export default async function LocaleLayout({
       <body className="min-h-screen bg-background font-sans text-foreground antialiased">
         <script
           type="application/ld+json"
-          // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <NextIntlClientProvider>
