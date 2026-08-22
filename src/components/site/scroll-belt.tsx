@@ -5,9 +5,10 @@ import { useEffect, useRef, useState } from "react";
 /**
  * Scroll-progress indicator styled as the dijker's toothed drive belt.
  *
- * A vertical toothed nylon belt is pinned to the right edge of the viewport in
- * place of the usual scrollbar visual. The dijker rides down the belt as the
- * page scrolls — a literal nod to the spiral belt drive multispeed®.
+ * A vertical, black-and-white toothed nylon belt is pinned flush to the right
+ * edge of the viewport in place of the usual scrollbar. The dijker rides down
+ * the belt as the page scrolls — a literal nod to the spiral belt drive
+ * multispeed®.
  */
 export function ScrollBelt() {
   const [progress, setProgress] = useState(0);
@@ -36,46 +37,44 @@ export function ScrollBelt() {
   return (
     <div
       aria-hidden="true"
-      className="pointer-events-none fixed inset-y-0 right-1 z-40 hidden w-8 select-none md:block"
+      className="pointer-events-none fixed inset-y-0 right-0 z-40 hidden w-10 select-none md:block"
     >
-      {/* the belt */}
+      {/* the belt — flush to the right edge, pure black & white */}
       <svg
         className="h-full w-full"
         preserveAspectRatio="none"
-        viewBox="0 0 32 1000"
+        viewBox="0 0 40 1000"
       >
         <defs>
+          {/* black teeth on a white belt body */}
           <pattern
             id="belt-teeth"
-            width="32"
-            height="16"
+            width="40"
+            height="18"
             patternUnits="userSpaceOnUse"
           >
-            <rect x="11" y="0" width="10" height="16" className="fill-primary/25" />
-            <rect x="9" y="4" width="14" height="8" rx="2" className="fill-primary/60" />
+            <rect x="28" y="3" width="12" height="12" rx="2" className="fill-foreground" />
           </pattern>
         </defs>
-        {/* belt body */}
-        <rect x="10" y="0" width="12" height="1000" rx="6" className="fill-muted" />
-        {/* teeth track */}
-        <rect x="10" y="0" width="12" height="1000" fill="url(#belt-teeth)" />
-        {/* traveled portion tinted */}
+        {/* belt body (white) with black edges */}
         <rect
-          x="10"
+          x="28"
           y="0"
           width="12"
-          height={progress * 1000}
-          rx="6"
-          className="fill-primary/15"
+          height="1000"
+          className="fill-background stroke-foreground"
+          strokeWidth="2"
         />
+        {/* teeth track */}
+        <rect x="28" y="0" width="12" height="1000" fill="url(#belt-teeth)" />
       </svg>
 
-      {/* the dijker riding the belt */}
+      {/* the dijker riding on top of the belt (sitting to its left, wheels on it) */}
       <div
-        className="absolute left-1/2 -translate-x-1/2 transition-[top] duration-75 ease-out"
-        style={{ top: `calc(${progress * 100}% )`, marginTop: "-14px" }}
+        className="absolute right-2 transition-[top] duration-75 ease-out"
+        style={{ top: `calc(${progress * 100}% )`, marginTop: "-16px" }}
       >
-        <DijkerIcon className="size-8 -rotate-90 drop-shadow" />
+        <DijkerIcon className="size-9 -rotate-90 drop-shadow" />
       </div>
     </div>
   );
