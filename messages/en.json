@@ -22,16 +22,15 @@
   },
   "dijker": {
     "heading": "The dijker",
-    "intro": "Five unique properties. Just read.",
+    "intro": "These are five unique properties of the dijker. Just read.",
     "body1": "The dijker is a new type of vehicle. It has four wheels and a small steering wheel that you push to brake. It has pedals for the drive that move back and forth in a straight line, left and right independently. The body consists of a handy undivided luggage compartment (the boot) and a nose cover — both easily taken off.",
-    "body2": "It is a newly designed alternative for commuters who now travel by car, motorcycle or public transport. Comfortable, dry and pleasant. Thanks to the sitting position you arrive rested and relaxed.",
-    "body3": "There are no brake handles, and no handles for changing gear either: you adjust by moving your toes backwards. All handles have been designed away. To ride a dijker is a new experience. To ride a dijker is fun.",
+    "body2": "Furthermore: there are no brake handles, and no handles for changing gear either — the adjustment is done by moving your toes backwards. All handles have been designed away. To ride a dijker is a new experience. To ride a dijker is fun.",
     "props": {
-      "fast": { "title": "Fast", "text": "Quick acceleration from standstill, and aerodynamics that help you at speed." },
-      "free": { "title": "Free", "text": "Open design — easy to get in and out. You'll never feel trapped." },
-      "comfort": { "title": "Comfort", "text": "A relaxed sitting position so you arrive rested. Ventilation keeps you dry." },
-      "protects": { "title": "Protects", "text": "Four strong wheels and a sturdy chassis. A mini poncho for rain, plus a design flag and striking colors for visibility." },
-      "fun": { "title": "Fun", "text": "No handles, intuitive controls — a genuinely new riding experience." }
+      "boot": { "title": "boot", "text": "The body consists of a handy undivided luggage compartment — the boot — and a nose cover. Both can be taken off very easily." },
+      "comfort": { "title": "comfort", "text": "A newly designed alternative for commuters who now travel by car, motorcycle or public transport. Comfortable, dry and pleasant — thanks to the sitting position you arrive rested and relaxed. Even with the front cover on there is plenty of ventilation, and the open-fabric backrest lets you hang a jacket over it." },
+      "fast": { "title": "fast", "text": "You push with both legs at the same time and the weight is minimal. Acceleration from standstill is quick, and at speed the aerodynamics help you along." },
+      "free": { "title": "free", "text": "Thanks to the open design of the vehicle you get in and out easily. You'll never feel trapped." },
+      "protects": { "title": "protects", "text": "On the road you are well protected by the four strong wheels and the sturdy chassis. A mini poncho between the boot and the nose cover keeps out cold and rain, and a design flag with striking colors keeps you visible." }
     }
   },
   "technique": {
