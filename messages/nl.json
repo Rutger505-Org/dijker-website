@@ -22,16 +22,15 @@
   },
   "dijker": {
     "heading": "De dijker",
-    "intro": "Vijf unieke eigenschappen. Lees maar.",
+    "intro": "Dit zijn vijf unieke eigenschappen van de dijker. Lees maar.",
     "body1": "De dijker is een nieuw type voertuig. Hij heeft vier wielen en een klein stuur dat je indrukt om te remmen. Hij heeft pedalen voor de aandrijving die recht heen en weer bewegen, links en rechts onafhankelijk. De carrosserie bestaat uit een handige onverdeelde bagageruimte (de boot) en een neuskap — beide eenvoudig af te nemen.",
-    "body2": "Het is een nieuw ontworpen alternatief voor forenzen die nu met de auto, motor of het openbaar vervoer reizen. Comfortabel, droog en aangenaam. Dankzij de zithouding kom je uitgerust en ontspannen aan.",
-    "body3": "Er zijn geen remhendels, en ook geen hendels om te schakelen: je verstelt door je tenen naar achteren te bewegen. Alle hendels zijn wegontworpen. Een dijker rijden is een nieuwe ervaring. Een dijker rijden is leuk.",
+    "body2": "Verder: er zijn geen remhendels, en ook geen hendels om te schakelen — je verstelt door je tenen naar achteren te bewegen. Alle hendels zijn wegontworpen. Een dijker rijden is een nieuwe ervaring. Een dijker rijden is leuk.",
     "props": {
-      "fast": { "title": "Snel", "text": "Snelle acceleratie vanuit stilstand, en aerodynamica die je op snelheid helpt." },
-      "free": { "title": "Vrij", "text": "Open ontwerp — makkelijk in- en uitstappen. Je voelt je nooit opgesloten." },
-      "comfort": { "title": "Comfort", "text": "Een ontspannen zithouding zodat je uitgerust aankomt. Ventilatie houdt je droog." },
-      "protects": { "title": "Beschermt", "text": "Vier sterke wielen en een stevig chassis. Een mini-poncho tegen regen, plus een designvlag en opvallende kleuren voor zichtbaarheid." },
-      "fun": { "title": "Plezier", "text": "Geen hendels, intuïtieve bediening — een echt nieuwe rijervaring." }
+      "boot": { "title": "boot", "text": "De carrosserie bestaat uit een handige onverdeelde bagageruimte — de boot — en een neuskap. Beide zijn heel eenvoudig af te nemen." },
+      "comfort": { "title": "comfort", "text": "Een nieuw ontworpen alternatief voor forenzen die nu met de auto, motor of het openbaar vervoer reizen. Comfortabel, droog en aangenaam — dankzij de zithouding kom je uitgerust en ontspannen aan. Zelfs met de neuskap op is er volop ventilatie, en over de open-stof rugleuning kun je een jas hangen." },
+      "fast": { "title": "fast", "text": "Je duwt met beide benen tegelijk en het gewicht is minimaal. De acceleratie vanuit stilstand is snel, en op snelheid helpt de aerodynamica je op weg." },
+      "free": { "title": "free", "text": "Dankzij het open ontwerp van het voertuig stap je makkelijk in en uit. Je voelt je nooit opgesloten." },
+      "protects": { "title": "protects", "text": "Op de weg ben je goed beschermd door de vier sterke wielen en het stevige chassis. Een mini-poncho tussen de boot en de neuskap houdt kou en regen buiten, en een designvlag met opvallende kleuren houdt je zichtbaar." }
     }
   },
   "technique": {
