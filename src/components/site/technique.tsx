@@ -62,6 +62,7 @@ export function Technique() {
               alt="the dijker — steering & brakes"
               width={1200}
               height={900}
+              sizes="(min-width: 768px) 50vw, 100vw"
               className="h-full w-full object-cover"
             />
           </div>

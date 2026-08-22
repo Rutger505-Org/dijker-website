@@ -14,6 +14,7 @@ export function Creator() {
             alt="Peter-Paul van der Ven"
             width={900}
             height={1100}
+            sizes="(min-width: 768px) 40vw, 100vw"
             className="h-full w-full object-cover"
           />
         </div>
