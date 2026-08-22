@@ -1,12 +1,12 @@
 import { useTranslations } from "next-intl";
-import { Gauge, Unlock, Armchair, ShieldCheck, Smile } from "lucide-react";
+import { Package, Armchair, Gauge, Unlock, ShieldCheck } from "lucide-react";
 
 const items = [
+  { key: "boot", Icon: Package },
+  { key: "comfort", Icon: Armchair },
   { key: "fast", Icon: Gauge },
   { key: "free", Icon: Unlock },
-  { key: "comfort", Icon: Armchair },
   { key: "protects", Icon: ShieldCheck },
-  { key: "fun", Icon: Smile },
 ] as const;
 
 export function Properties() {
@@ -22,10 +22,9 @@ export function Properties() {
           <p className="text-lg text-muted-foreground">{t("intro")}</p>
         </div>
 
-        <div className="mt-10 grid gap-6 text-foreground/90 md:grid-cols-3">
+        <div className="mt-10 grid gap-6 text-foreground/90 md:grid-cols-2">
           <p>{t("body1")}</p>
           <p>{t("body2")}</p>
-          <p>{t("body3")}</p>
         </div>
 
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
