@@ -20,25 +20,23 @@ export function LanguageSwitcher() {
 
   return (
     <div
-      className="flex items-center gap-1 text-sm font-medium"
+      className="flex items-center gap-1 rounded-full border border-primary/30 bg-background p-0.5 text-sm font-semibold"
       aria-busy={isPending}
     >
-      {routing.locales.map((l, i) => (
-        <span key={l} className="flex items-center gap-1">
-          {i > 0 && <span className="text-muted-foreground/40">/</span>}
-          <button
-            type="button"
-            onClick={() => switchTo(l)}
-            className={
-              l === locale
-                ? "text-foreground"
-                : "text-muted-foreground transition-colors hover:text-foreground"
-            }
-            aria-current={l === locale ? "true" : undefined}
-          >
-            {l.toUpperCase()}
-          </button>
-        </span>
+      {routing.locales.map((l) => (
+        <button
+          key={l}
+          type="button"
+          onClick={() => switchTo(l)}
+          className={
+            l === locale
+              ? "rounded-full bg-primary px-3 py-1 text-primary-foreground shadow-sm"
+              : "rounded-full px-3 py-1 text-primary transition-colors hover:bg-accent hover:text-accent-foreground"
+          }
+          aria-current={l === locale ? "true" : undefined}
+        >
+          {l.toUpperCase()}
+        </button>
       ))}
     </div>
   );
