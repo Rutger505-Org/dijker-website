@@ -27,11 +27,26 @@
     "body2": "It is a newly designed alternative for commuters who now travel by car, motorcycle or public transport. Comfortable, dry and pleasant. Thanks to the sitting position you arrive rested and relaxed.",
     "body3": "There are no brake handles, and no handles for changing gear either: you adjust by moving your toes backwards. All handles have been designed away. To ride a dijker is a new experience. To ride a dijker is fun.",
     "props": {
-      "fast": { "title": "Fast", "text": "Quick acceleration from standstill, and aerodynamics that help you at speed." },
-      "free": { "title": "Free", "text": "Open design — easy to get in and out. You'll never feel trapped." },
-      "comfort": { "title": "Comfort", "text": "A relaxed sitting position so you arrive rested. Ventilation keeps you dry." },
-      "protects": { "title": "Protects", "text": "Four strong wheels and a sturdy chassis. A mini poncho for rain, plus a design flag and striking colors for visibility." },
-      "fun": { "title": "Fun", "text": "No handles, intuitive controls — a genuinely new riding experience." }
+      "fast": {
+        "title": "Fast",
+        "text": "Quick acceleration from standstill, and aerodynamics that help you at speed."
+      },
+      "free": {
+        "title": "Free",
+        "text": "Open design — easy to get in and out. You'll never feel trapped."
+      },
+      "comfort": {
+        "title": "Comfort",
+        "text": "A relaxed sitting position so you arrive rested. Ventilation keeps you dry."
+      },
+      "protects": {
+        "title": "Protects",
+        "text": "Four strong wheels and a sturdy chassis. A mini poncho for rain, plus a design flag and striking colors for visibility."
+      },
+      "fun": {
+        "title": "Fun",
+        "text": "No handles, intuitive controls — a genuinely new riding experience."
+      }
     }
   },
   "technique": {

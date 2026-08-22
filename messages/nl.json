@@ -27,11 +27,26 @@
     "body2": "Het is een nieuw ontworpen alternatief voor forenzen die nu met de auto, motor of het openbaar vervoer reizen. Comfortabel, droog en aangenaam. Dankzij de zithouding kom je uitgerust en ontspannen aan.",
     "body3": "Er zijn geen remhendels, en ook geen hendels om te schakelen: je verstelt door je tenen naar achteren te bewegen. Alle hendels zijn wegontworpen. Een dijker rijden is een nieuwe ervaring. Een dijker rijden is leuk.",
     "props": {
-      "fast": { "title": "Snel", "text": "Snelle acceleratie vanuit stilstand, en aerodynamica die je op snelheid helpt." },
-      "free": { "title": "Vrij", "text": "Open ontwerp — makkelijk in- en uitstappen. Je voelt je nooit opgesloten." },
-      "comfort": { "title": "Comfort", "text": "Een ontspannen zithouding zodat je uitgerust aankomt. Ventilatie houdt je droog." },
-      "protects": { "title": "Beschermt", "text": "Vier sterke wielen en een stevig chassis. Een mini-poncho tegen regen, plus een designvlag en opvallende kleuren voor zichtbaarheid." },
-      "fun": { "title": "Plezier", "text": "Geen hendels, intuïtieve bediening — een echt nieuwe rijervaring." }
+      "fast": {
+        "title": "Snel",
+        "text": "Snelle acceleratie vanuit stilstand, en aerodynamica die je op snelheid helpt."
+      },
+      "free": {
+        "title": "Vrij",
+        "text": "Open ontwerp — makkelijk in- en uitstappen. Je voelt je nooit opgesloten."
+      },
+      "comfort": {
+        "title": "Comfort",
+        "text": "Een ontspannen zithouding zodat je uitgerust aankomt. Ventilatie houdt je droog."
+      },
+      "protects": {
+        "title": "Beschermt",
+        "text": "Vier sterke wielen en een stevig chassis. Een mini-poncho tegen regen, plus een designvlag en opvallende kleuren voor zichtbaarheid."
+      },
+      "fun": {
+        "title": "Plezier",
+        "text": "Geen hendels, intuïtieve bediening — een echt nieuwe rijervaring."
+      }
     }
   },
   "technique": {

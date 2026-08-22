@@ -18,6 +18,7 @@ import {
   siteName,
   siteUrl,
 } from "@/lib/site";
+import { ScrollBelt } from "@/components/site/scroll-belt";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -119,6 +120,7 @@ export default async function LocaleLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <NextIntlClientProvider>
+          <ScrollBelt />
           <TRPCReactProvider>{children}</TRPCReactProvider>
         </NextIntlClientProvider>
       </body>

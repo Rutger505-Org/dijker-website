@@ -67,6 +67,20 @@ export function Technique() {
             />
           </div>
         </div>
+
+        <div className="mt-16 border-t border-border pt-14">
+          <div className="overflow-hidden rounded-xl border border-border bg-black">
+            <video
+              className="h-full w-full"
+              controls
+              playsInline
+              preload="none"
+              poster="/media/img007.webp"
+            >
+              <source src="/media/dijker_aandrijving.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
       </div>
     </section>
   );
