@@ -14,11 +14,11 @@ export const siteName = "the dijker";
 export const ogImage = "/media/img007.webp";
 
 /**
- * Build the localized path for a locale honoring next-intl "as-needed" prefix
- * (default locale has no prefix).
+ * Build the localized path for a locale. With next-intl `localePrefix: "always"`
+ * every locale (including the default) is served under its own prefix.
  */
 export function localePath(locale: string): string {
-  return locale === routing.defaultLocale ? "/" : `/${locale}`;
+  return `/${locale}`;
 }
 
 /**
@@ -29,6 +29,6 @@ export function languageAlternates(): Record<string, string> {
   for (const locale of routing.locales) {
     alternates[locale] = `${siteUrl}${localePath(locale)}`;
   }
-  alternates["x-default"] = `${siteUrl}/`;
+  alternates["x-default"] = `${siteUrl}${localePath(routing.defaultLocale)}`;
   return alternates;
 }
