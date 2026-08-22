@@ -25,14 +25,14 @@ export function LanguageSwitcher() {
     >
       {routing.locales.map((l, i) => (
         <span key={l} className="flex items-center gap-1">
-          {i > 0 && <span className="text-muted-foreground/40">/</span>}
+          {i > 0 && <span className="text-foreground/50">/</span>}
           <button
             type="button"
             onClick={() => switchTo(l)}
             className={
               l === locale
-                ? "text-foreground"
-                : "text-muted-foreground transition-colors hover:text-foreground"
+                ? "font-semibold text-primary"
+                : "text-foreground transition-colors hover:text-primary"
             }
             aria-current={l === locale ? "true" : undefined}
           >
