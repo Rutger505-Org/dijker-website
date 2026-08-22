@@ -31,8 +31,8 @@ export function LanguageSwitcher() {
             onClick={() => switchTo(l)}
             className={
               l === locale
-                ? "font-bold text-primary-foreground underline underline-offset-4"
-                : "text-primary-foreground/60 transition-colors hover:text-primary-foreground"
+                ? "text-primary-foreground underline underline-offset-4"
+                : "text-primary-foreground transition-colors"
             }
             aria-current={l === locale ? "true" : undefined}
           >
