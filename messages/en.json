@@ -27,11 +27,26 @@
     "body2": "It is a newly designed alternative for commuters who now travel by car, motorcycle or public transport. Comfortable, dry and pleasant. Thanks to the sitting position you arrive rested and relaxed.",
     "body3": "There are no brake handles, and no handles for changing gear either: you adjust by moving your toes backwards. All handles have been designed away. To ride a dijker is a new experience. To ride a dijker is fun.",
     "props": {
-      "fast": { "title": "Fast", "text": "Quick acceleration from standstill, and aerodynamics that help you at speed." },
-      "free": { "title": "Free", "text": "Open design — easy to get in and out. You'll never feel trapped." },
-      "comfort": { "title": "Comfort", "text": "A relaxed sitting position so you arrive rested. Ventilation keeps you dry." },
-      "protects": { "title": "Protects", "text": "Four strong wheels and a sturdy chassis. A mini poncho for rain, plus a design flag and striking colors for visibility." },
-      "fun": { "title": "Fun", "text": "No handles, intuitive controls — a genuinely new riding experience." }
+      "fast": {
+        "title": "Fast",
+        "text": "Quick acceleration from standstill, and aerodynamics that help you at speed."
+      },
+      "free": {
+        "title": "Free",
+        "text": "Open design — easy to get in and out. You'll never feel trapped."
+      },
+      "comfort": {
+        "title": "Comfort",
+        "text": "A relaxed sitting position so you arrive rested. Ventilation keeps you dry."
+      },
+      "protects": {
+        "title": "Protects",
+        "text": "Four strong wheels and a sturdy chassis. A mini poncho for rain, plus a design flag and striking colors for visibility."
+      },
+      "fun": {
+        "title": "Fun",
+        "text": "No handles, intuitive controls — a genuinely new riding experience."
+      }
     }
   },
   "technique": {
@@ -79,5 +94,21 @@
     "tagline": "move yourself",
     "trademark": "spiral belt drive multispeed® is a registered trademark.",
     "rights": "All rights reserved."
+  },
+  "drive": {
+    "heading": "How the spiral belt drive works",
+    "intro": "Instead of a chain and cassette, the dijker uses a toothed nylon belt wound in a flat spiral around the wheel axle — one belt per pedal, left and right independent.",
+    "step1": "You push a pedal in a straight line. That linear stroke pays belt onto or off the spiral around the axle.",
+    "step2": "The belt engages the axle at whatever radius it is wound to. That radius is your gear ratio.",
+    "step3": "Add belt length while pushing and the effective diameter grows — a higher gear for speed. Remove it and the diameter shrinks — a lower gear for torque.",
+    "step4": "Because it is continuous, you can even downshift while standing still. A derailleur can never do that.",
+    "noChainTitle": "No chain, no derailleur",
+    "noChain": "The whole drive-and-gear function is integrated into one belt-and-spiral system: fewer parts, cleaner, and shielded inside the chassis.",
+    "diagramAlt": "Diagram of a belt wound in a spiral around the wheel axle, with the wound diameter changing the gear ratio.",
+    "sliderLabel": "Adjust the gear by winding belt on or off the spiral",
+    "lowGear": "Low gear",
+    "highGear": "High gear",
+    "ratio": "≈ {ratio}:1 · {pct}%",
+    "caption": "Drag the slider: more wound belt = larger diameter = higher gear. That is the spiral belt drive multispeed®."
   }
 }

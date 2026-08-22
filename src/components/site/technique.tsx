@@ -1,6 +1,7 @@
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { Award } from "lucide-react";
+import { DriveSystem } from "./drive-system";
 
 export function Technique() {
   const t = useTranslations("technique");
@@ -65,6 +66,22 @@ export function Technique() {
               sizes="(min-width: 768px) 50vw, 100vw"
               className="h-full w-full object-cover"
             />
+          </div>
+        </div>
+
+        <div className="mt-16 border-t border-border pt-14">
+          <DriveSystem />
+
+          <div className="mt-10 overflow-hidden rounded-xl border border-border bg-black">
+            <video
+              className="h-full w-full"
+              controls
+              playsInline
+              preload="none"
+              poster="/media/img007.webp"
+            >
+              <source src="/media/dijker_aandrijving.mp4" type="video/mp4" />
+            </video>
           </div>
         </div>
       </div>

@@ -27,11 +27,26 @@
     "body2": "Het is een nieuw ontworpen alternatief voor forenzen die nu met de auto, motor of het openbaar vervoer reizen. Comfortabel, droog en aangenaam. Dankzij de zithouding kom je uitgerust en ontspannen aan.",
     "body3": "Er zijn geen remhendels, en ook geen hendels om te schakelen: je verstelt door je tenen naar achteren te bewegen. Alle hendels zijn wegontworpen. Een dijker rijden is een nieuwe ervaring. Een dijker rijden is leuk.",
     "props": {
-      "fast": { "title": "Snel", "text": "Snelle acceleratie vanuit stilstand, en aerodynamica die je op snelheid helpt." },
-      "free": { "title": "Vrij", "text": "Open ontwerp — makkelijk in- en uitstappen. Je voelt je nooit opgesloten." },
-      "comfort": { "title": "Comfort", "text": "Een ontspannen zithouding zodat je uitgerust aankomt. Ventilatie houdt je droog." },
-      "protects": { "title": "Beschermt", "text": "Vier sterke wielen en een stevig chassis. Een mini-poncho tegen regen, plus een designvlag en opvallende kleuren voor zichtbaarheid." },
-      "fun": { "title": "Plezier", "text": "Geen hendels, intuïtieve bediening — een echt nieuwe rijervaring." }
+      "fast": {
+        "title": "Snel",
+        "text": "Snelle acceleratie vanuit stilstand, en aerodynamica die je op snelheid helpt."
+      },
+      "free": {
+        "title": "Vrij",
+        "text": "Open ontwerp — makkelijk in- en uitstappen. Je voelt je nooit opgesloten."
+      },
+      "comfort": {
+        "title": "Comfort",
+        "text": "Een ontspannen zithouding zodat je uitgerust aankomt. Ventilatie houdt je droog."
+      },
+      "protects": {
+        "title": "Beschermt",
+        "text": "Vier sterke wielen en een stevig chassis. Een mini-poncho tegen regen, plus een designvlag en opvallende kleuren voor zichtbaarheid."
+      },
+      "fun": {
+        "title": "Plezier",
+        "text": "Geen hendels, intuïtieve bediening — een echt nieuwe rijervaring."
+      }
     }
   },
   "technique": {
@@ -79,5 +94,21 @@
     "tagline": "move yourself",
     "trademark": "spiral belt drive multispeed® is een geregistreerd handelsmerk.",
     "rights": "Alle rechten voorbehouden."
+  },
+  "drive": {
+    "heading": "Zo werkt de spiraal-riemaandrijving",
+    "intro": "In plaats van een ketting en cassette gebruikt de dijker een getande nylon riem die spiraalvormig om de wielas is gewikkeld — één riem per pedaal, links en rechts onafhankelijk.",
+    "step1": "Je duwt een pedaal in een rechte lijn. Die lineaire slag wikkelt riem op of van de spiraal rond de as.",
+    "step2": "De riem grijpt de as aan op de straal waarop hij gewikkeld staat. Die straal is jouw versnelling.",
+    "step3": "Voeg riemlengte toe tijdens het duwen en de effectieve diameter groeit — een hogere versnelling voor snelheid. Haal hem weg en de diameter krimpt — een lagere versnelling voor kracht.",
+    "step4": "Omdat het traploos is, kun je zelfs bij stilstand terugschakelen. Een derailleur kan dat nooit.",
+    "noChainTitle": "Geen ketting, geen derailleur",
+    "noChain": "De volledige aandrijf- én versnellingsfunctie zit in één riem-en-spiraalsysteem: minder onderdelen, schoner, en beschermd in het chassis.",
+    "diagramAlt": "Schema van een riem die spiraalvormig om de wielas is gewikkeld, waarbij de gewikkelde diameter de versnelling bepaalt.",
+    "sliderLabel": "Pas de versnelling aan door riem op of van de spiraal te wikkelen",
+    "lowGear": "Lage versnelling",
+    "highGear": "Hoge versnelling",
+    "ratio": "≈ {ratio}:1 · {pct}%",
+    "caption": "Sleep de schuif: meer gewikkelde riem = grotere diameter = hogere versnelling. Dat is de spiral belt drive multispeed®."
   }
 }
