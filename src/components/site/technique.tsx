@@ -1,7 +1,6 @@
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { Award } from "lucide-react";
-import { DriveSystem } from "./drive-system";
 
 export function Technique() {
   const t = useTranslations("technique");
@@ -70,9 +69,7 @@ export function Technique() {
         </div>
 
         <div className="mt-16 border-t border-border pt-14">
-          <DriveSystem />
-
-          <div className="mt-10 overflow-hidden rounded-xl border border-border bg-black">
+          <div className="overflow-hidden rounded-xl border border-border bg-black">
             <video
               className="h-full w-full"
               controls
