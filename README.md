@@ -97,3 +97,33 @@ Copy the file to your Windows filesystem with the following command:
 ```bash
 kubectl cp <namespace>/<pod-name>:/app/data/db.sqlite  /mnt/c/Users/<user>/Documents/
 ```
+
+## Deploying on a single VM (Docker Compose)
+
+An alternative to Kubernetes for running production on a plain VM. Caddy sits in
+front and terminates TLS with automatic Let's Encrypt certificates, replacing
+the cert-manager + Ingress layer. The app itself only serves plain HTTP.
+
+Files: [docker-compose.yml](docker-compose.yml), [Caddyfile](Caddyfile),
+[.env.production.example](.env.production.example).
+
+### Requirements
+
+- A DNS `A` record for your domain pointing to the VM's public IP (set it
+  **before** first start so the ACME challenge succeeds).
+- Ports `80` and `443` open (`80` is needed for the HTTP-01 challenge).
+
+### Steps
+
+```bash
+cp .env.production.example .env
+# fill in AUTH_SECRET, AUTH_EMAIL_PASSWORD, APP_DOMAIN, etc.
+
+docker compose up -d --build
+docker compose logs -f caddy   # watch for certificate issuance
+```
+
+The `migrate` service runs `bun db:migrate` once and exits; the `web` service
+starts only after it completes successfully. SQLite lives in the `sqlite_data`
+volume and the issued certificates in the `caddy_data` volume — keep both
+persistent (losing `caddy_data` can hit Let's Encrypt rate limits on restart).

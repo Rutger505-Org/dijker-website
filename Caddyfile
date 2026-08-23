@@ -1,0 +1,8 @@
+# Caddy reverse proxy with automatic HTTPS (Let's Encrypt).
+# Replaces cert-manager + Ingress from the Kubernetes setup.
+#
+# {$APP_DOMAIN} is read from the APP_DOMAIN environment variable (set in .env).
+
+{$APP_DOMAIN} {
+	reverse_proxy web:3000
+}

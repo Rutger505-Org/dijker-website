@@ -1,0 +1,64 @@
+# Production Docker Compose for running on a single VM.
+#
+# Mirrors the Kubernetes setup: a one-shot migration step runs before the app
+# starts, the app serves plain HTTP on :3000, and Caddy terminates TLS in front
+# of it (replacing cert-manager + Ingress with automatic Let's Encrypt certs).
+#
+# Usage:
+#   cp .env.production.example .env
+#   # fill in the secrets, then:
+#   docker compose up -d --build
+#
+# Requirements before first start:
+#   - DNS A record for ${APP_DOMAIN} -> this VM's public IP
+#   - Ports 80 and 443 open (80 is needed for the ACME HTTP-01 challenge)
+
+services:
+  # One-shot database migration. Runs to completion, then the app starts.
+  migrate:
+    build:
+      context: .
+      target: production
+    image: ${APP_IMAGE:-dijker-website:latest}
+    command: ["sh", "-c", "cd /app && bun db:migrate"]
+    env_file: .env
+    volumes:
+      - sqlite_data:/app/data
+    restart: "no"
+
+  web:
+    build:
+      context: .
+      target: production
+    image: ${APP_IMAGE:-dijker-website:latest}
+    env_file: .env
+    expose:
+      - "3000"
+    volumes:
+      - sqlite_data:/app/data
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+    restart: unless-stopped
+
+  caddy:
+    image: caddy:2
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      APP_DOMAIN: ${APP_DOMAIN}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - web
+    restart: unless-stopped
+
+volumes:
+  # Keep caddy_data persistent: it holds the issued certificates and ACME
+  # account. Losing it forces re-issuance and can hit Let's Encrypt rate limits.
+  caddy_data:
+  caddy_config:
+  sqlite_data:
