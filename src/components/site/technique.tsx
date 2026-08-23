@@ -41,6 +41,19 @@ export function Technique() {
           </div>
         </div>
 
+        <div className="mt-6 space-y-2">
+          <div className="aspect-video overflow-hidden rounded-xl border border-border bg-black">
+            <video
+              className="h-full w-full"
+              src="/media/dijker_aandrijving.mp4"
+              controls
+              playsInline
+              preload="metadata"
+            />
+          </div>
+          <p className="text-sm text-muted-foreground">{t("videoDrive")}</p>
+        </div>
+
         <div className="mt-14 grid gap-10 md:grid-cols-2">
           <div className="space-y-8">
             <div className="space-y-2">
