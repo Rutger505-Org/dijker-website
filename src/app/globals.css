@@ -101,6 +101,10 @@
   }
   html {
     scroll-behavior: smooth;
+    scrollbar-width: none; /* Firefox: hide native scrollbar (replaced by ScrollBelt) */
+  }
+  html::-webkit-scrollbar {
+    display: none; /* Chrome/Safari: hide native scrollbar */
   }
   section[id] {
     scroll-margin-top: 4rem;

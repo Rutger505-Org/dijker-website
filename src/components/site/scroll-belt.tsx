@@ -4,7 +4,8 @@ import { useEffect, useRef, useState } from "react";
 
 /**
  * Subtle scroll-progress indicator styled as the direct-current symbol (⎓)
- * repeated down the right edge — a solid line over three dashes, stacked.
+ * rotated 90° clockwise and repeated seamlessly down the right edge — a
+ * continuous solid line beside a parallel dashed line.
  *
  * It reads like a normal, understated scrollbar: a faint DC-symbol track with a
  * slightly stronger "thumb" segment that moves with scroll progress.
@@ -44,19 +45,19 @@ export function ScrollBelt() {
         viewBox="0 0 16 1000"
       >
         <defs>
-          {/* one direct-current symbol: solid line over three dashes */}
+          {/* direct-current symbol rotated 90° CW: solid line (right) beside a
+              dashed line (left). Tile abuts seamlessly so the solid line runs
+              continuous and the dashes form an even dashed line. */}
           <pattern
             id="dc-symbol"
             width="16"
-            height="20"
+            height="8"
             patternUnits="userSpaceOnUse"
           >
-            {/* solid top line */}
-            <rect x="3" y="7" width="10" height="1.5" rx="0.75" fill="currentColor" />
-            {/* three dashes below */}
-            <rect x="3" y="11.5" width="2.4" height="1.5" rx="0.75" fill="currentColor" />
-            <rect x="6.8" y="11.5" width="2.4" height="1.5" rx="0.75" fill="currentColor" />
-            <rect x="10.6" y="11.5" width="2.4" height="1.5" rx="0.75" fill="currentColor" />
+            {/* continuous solid line (spans full tile height → no gaps) */}
+            <rect x="10" y="0" width="1.6" height="8" fill="currentColor" />
+            {/* one dash of the parallel dashed line per tile */}
+            <rect x="5" y="1" width="1.6" height="6" rx="0.8" fill="currentColor" />
           </pattern>
         </defs>
 
