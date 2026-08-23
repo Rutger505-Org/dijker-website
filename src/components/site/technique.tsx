@@ -60,8 +60,8 @@ export function Technique() {
             <Image
               src="/media/brake_lever.webp"
               alt="the dijker — steering & brakes"
-              width={1200}
-              height={900}
+              width={1600}
+              height={764}
               sizes="(min-width: 768px) 50vw, 100vw"
               className="h-full w-full object-cover"
             />
