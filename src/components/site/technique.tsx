@@ -12,16 +12,32 @@ export function Technique() {
           {t("heading")}
         </h2>
 
-        <div id="video" className="mt-10 scroll-mt-24">
-          <div className="aspect-video overflow-hidden rounded-xl border border-border bg-black">
-            <iframe
-              className="h-full w-full"
-              src="https://www.youtube-nocookie.com/embed/m3ZI0HB3BCs"
-              title="the dijker"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
-            />
+        <div id="video" className="mt-10 grid gap-6 scroll-mt-24 md:grid-cols-2">
+          <div className="space-y-2">
+            <div className="aspect-video overflow-hidden rounded-xl border border-border bg-black">
+              <iframe
+                className="h-full w-full"
+                src="https://www.youtube-nocookie.com/embed/m3ZI0HB3BCs"
+                title="the dijker"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              />
+            </div>
+            <p className="text-sm text-muted-foreground">{t("videoIntro")}</p>
+          </div>
+          <div className="space-y-2">
+            <div className="aspect-video overflow-hidden rounded-xl border border-border bg-black">
+              <iframe
+                className="h-full w-full"
+                src="https://www.youtube-nocookie.com/embed/ZofyjBrF9A8"
+                title="the dijker — spiral belt drive animation"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              />
+            </div>
+            <p className="text-sm text-muted-foreground">{t("videoAnimation")}</p>
           </div>
         </div>
 
