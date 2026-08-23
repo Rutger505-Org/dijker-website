@@ -12,17 +12,46 @@ export function Technique() {
           {t("heading")}
         </h2>
 
-        <div id="video" className="mt-10 scroll-mt-24">
+        <div id="video" className="mt-10 grid gap-6 scroll-mt-24 md:grid-cols-2">
+          <div className="space-y-2">
+            <div className="aspect-video overflow-hidden rounded-xl border border-border bg-black">
+              <iframe
+                className="h-full w-full"
+                src="https://www.youtube-nocookie.com/embed/m3ZI0HB3BCs"
+                title="the dijker"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              />
+            </div>
+            <p className="text-sm text-muted-foreground">{t("videoIntro")}</p>
+          </div>
+          <div className="space-y-2">
+            <div className="aspect-video overflow-hidden rounded-xl border border-border bg-black">
+              <iframe
+                className="h-full w-full"
+                src="https://www.youtube-nocookie.com/embed/ZofyjBrF9A8"
+                title="the dijker — spiral belt drive animation"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              />
+            </div>
+            <p className="text-sm text-muted-foreground">{t("videoAnimation")}</p>
+          </div>
+        </div>
+
+        <div className="mt-6 space-y-2">
           <div className="aspect-video overflow-hidden rounded-xl border border-border bg-black">
-            <iframe
+            <video
               className="h-full w-full"
-              src="https://www.youtube-nocookie.com/embed/m3ZI0HB3BCs"
-              title="the dijker"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
+              src="/media/dijker_aandrijving.mp4"
+              controls
+              playsInline
+              preload="metadata"
             />
           </div>
+          <p className="text-sm text-muted-foreground">{t("videoDrive")}</p>
         </div>
 
         <div className="mt-14 grid gap-10 md:grid-cols-2">
@@ -60,8 +89,8 @@ export function Technique() {
             <Image
               src="/media/brake_lever.webp"
               alt="the dijker — steering & brakes"
-              width={1200}
-              height={900}
+              width={1600}
+              height={764}
               sizes="(min-width: 768px) 50vw, 100vw"
               className="h-full w-full object-cover"
             />

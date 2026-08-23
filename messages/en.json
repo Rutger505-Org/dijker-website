@@ -26,11 +26,26 @@
     "body1": "The dijker is a new type of vehicle. It has four wheels and a small steering wheel that you push to brake. It has pedals for the drive that move back and forth in a straight line, left and right independently. The body consists of a handy undivided luggage compartment (the boot) and a nose cover — both easily taken off.",
     "body2": "Furthermore: there are no brake handles, and no handles for changing gear either — the adjustment is done by moving your toes backwards. All handles have been designed away. To ride a dijker is a new experience. To ride a dijker is fun.",
     "props": {
-      "boot": { "title": "boot", "text": "The body consists of a handy undivided luggage compartment — the boot — and a nose cover. Both can be taken off very easily." },
-      "comfort": { "title": "comfort", "text": "A newly designed alternative for commuters who now travel by car, motorcycle or public transport. Comfortable, dry and pleasant — thanks to the sitting position you arrive rested and relaxed. Even with the front cover on there is plenty of ventilation, and the open-fabric backrest lets you hang a jacket over it." },
-      "fast": { "title": "fast", "text": "You push with both legs at the same time and the weight is minimal. Acceleration from standstill is quick, and at speed the aerodynamics help you along." },
-      "free": { "title": "free", "text": "Thanks to the open design of the vehicle you get in and out easily. You'll never feel trapped." },
-      "protects": { "title": "protects", "text": "On the road you are well protected by the four strong wheels and the sturdy chassis. A mini poncho between the boot and the nose cover keeps out cold and rain, and a design flag with striking colors keeps you visible." }
+      "boot": {
+        "title": "boot",
+        "text": "The body consists of a handy undivided luggage compartment — the boot — and a nose cover. Both can be taken off very easily."
+      },
+      "comfort": {
+        "title": "comfort",
+        "text": "A newly designed alternative for commuters who now travel by car, motorcycle or public transport. Comfortable, dry and pleasant — thanks to the sitting position you arrive rested and relaxed. Even with the front cover on there is plenty of ventilation, and the open-fabric backrest lets you hang a jacket over it."
+      },
+      "fast": {
+        "title": "fast",
+        "text": "You push with both legs at the same time and the weight is minimal. Acceleration from standstill is quick, and at speed the aerodynamics help you along."
+      },
+      "free": {
+        "title": "free",
+        "text": "Thanks to the open design of the vehicle you get in and out easily. You'll never feel trapped."
+      },
+      "protects": {
+        "title": "protects",
+        "text": "On the road you are well protected by the four strong wheels and the sturdy chassis. A mini poncho between the boot and the nose cover keeps out cold and rain, and a design flag with striking colors keeps you visible."
+      }
     }
   },
   "technique": {
@@ -43,7 +58,10 @@
     "brakes": "All four wheels have light metal drum brakes, operated by pressing the steering column with the steering wheel. Unexpected, but intuitive and safe in practice.",
     "awardTitle": "Award",
     "award": "Third prize at the Germersheim Spezialradmesse 2019 inventor competition.",
-    "awardLink": "See the competition"
+    "awardLink": "See the competition",
+    "videoIntro": "Watch the dijker in action.",
+    "videoAnimation": "Animation: the spiral belt drive multispeed® winding around the wheel axle.",
+    "videoDrive": "The spiral belt drive multispeed® in real life — the belts winding around the wheel axle."
   },
   "creator": {
     "heading": "The creator",
