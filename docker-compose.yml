@@ -6,8 +6,14 @@
 #
 # Usage:
 #   cp .env.production.example .env
-#   # fill in the secrets, then:
-#   docker compose up -d --build
+#   # fill in the secrets (incl. DOCKERHUB_USERNAME + APP_VERSION), then:
+#   docker compose pull
+#   docker compose up -d
+#
+# The image is the one built & pushed to Docker Hub by the tag pipeline:
+#   ${DOCKERHUB_USERNAME}/dijker-website:${APP_VERSION}   (e.g. .../dijker-website:1.5)
+# It is assembled in .env via APP_IMAGE, so bumping the deployed version is a
+# one-line APP_VERSION change followed by `docker compose pull && up -d`.
 #
 # Requirements before first start:
 #   - DNS A record for ${APP_DOMAIN} -> this VM's public IP
@@ -16,10 +22,7 @@
 services:
   # One-shot database migration. Runs to completion, then the app starts.
   migrate:
-    build:
-      context: .
-      target: production
-    image: ${APP_IMAGE:-dijker-website:latest}
+    image: ${APP_IMAGE:?set APP_IMAGE in .env, e.g. youruser/dijker-website:1.5}
     command: ["sh", "-c", "cd /app && bun db:migrate"]
     env_file: .env
     volumes:
@@ -27,10 +30,7 @@ services:
     restart: "no"
 
   web:
-    build:
-      context: .
-      target: production
-    image: ${APP_IMAGE:-dijker-website:latest}
+    image: ${APP_IMAGE:?set APP_IMAGE in .env, e.g. youruser/dijker-website:1.5}
     env_file: .env
     expose:
       - "3000"
