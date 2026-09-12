@@ -127,3 +127,4 @@ The `migrate` service runs `bun db:migrate` once and exits; the `web` service
 starts only after it completes successfully. SQLite lives in the `sqlite_data`
 volume and the issued certificates in the `caddy_data` volume — keep both
 persistent (losing `caddy_data` can hit Let's Encrypt rate limits on restart).
+<!-- ci test: validating bash-based deploy config, safe to delete -->
