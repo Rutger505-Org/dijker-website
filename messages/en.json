@@ -1,13 +1,13 @@
 {
   "metadata": {
-    "title": "the dijker — move yourself",
-    "description": "The dijker is a new type of vehicle that feels quite familiar at the same time. A high-tech vehicle with its unique spiral belt drive multispeed®."
+    "title": "the dijker | move yourself",
+    "description": "The dijker is a four-wheeled vehicle you drive with your legs. You brake by pushing the steering wheel and shift gears with your toes, through the spiral belt drive multispeed®."
   },
   "nav": {
     "home": "Home",
-    "dijker": "The dijker",
+    "dijker": "Highlights",
     "technique": "Technique",
-    "creator": "Creator",
+    "creator": "Inventor",
     "investing": "Investing",
     "contact": "Contact",
     "language": "Language"
@@ -15,72 +15,74 @@
   "hero": {
     "slogan": "move yourself",
     "title": "the dijker",
-    "lead": "As if it has always existed: the dijker. A new type of vehicle that feels quite familiar at the same time. It breathes nostalgia.",
-    "sub": "But don't let the classic lines fool you — the dijker is a high-tech vehicle with its unique spiral belt drive multispeed®.",
+    "lead": "The dijker looks like it has been on the road for decades. Yet nothing like it existed before.",
+    "sub": "Under that classic shape sits new engineering. The dijker runs on the spiral belt drive multispeed®, a drive no other vehicle has.",
     "cta": "Watch the video",
     "contactCta": "Get in touch"
   },
   "dijker": {
-    "heading": "The dijker",
-    "intro": "These are five unique properties of the dijker. Just read.",
-    "body1": "The dijker is a new type of vehicle. It has four wheels and a small steering wheel that you push to brake. It has pedals for the drive that move back and forth in a straight line, left and right independently. The body consists of a handy undivided luggage compartment (the boot) and a nose cover — both easily taken off.",
-    "body2": "Furthermore: there are no brake handles, and no handles for changing gear either — the adjustment is done by moving your toes backwards. All handles have been designed away. To ride a dijker is a new experience. To ride a dijker is fun.",
+    "heading": "Highlights at a glance",
+    "intro": "Five things that set the dijker apart.",
+    "body1": "The dijker has four wheels and a small steering wheel. To brake, you push that steering wheel in. The pedals move back and forth in a straight line, left and right independently. The body comes in two parts: an open luggage compartment, the boot, and a nose cover. Both come off in seconds.",
+    "body2": "There are no brake levers. There are no gear levers either, because you shift by moving your toes backwards. It rides like nothing you have tried before, and it is a lot of fun.",
     "props": {
-      "boot": {
-        "title": "boot",
-        "text": "The body consists of a handy undivided luggage compartment — the boot — and a nose cover. Both can be taken off very easily."
-      },
       "comfort": {
         "title": "comfort",
-        "text": "A newly designed alternative for commuters who now travel by car, motorcycle or public transport. Comfortable, dry and pleasant — thanks to the sitting position you arrive rested and relaxed. Even with the front cover on there is plenty of ventilation, and the open-fabric backrest lets you hang a jacket over it."
+        "text": "Made for commuters who now take the car, a motorbike or public transport. You sit leaning back and stay dry, so you arrive rested. With the nose cover on there is still plenty of airflow, and you can hang your jacket over the open-fabric backrest."
+      },
+      "protection": {
+        "title": "protection",
+        "text": "Four sturdy wheels and a strong chassis keep you safe on the road. A small poncho between the boot and the nose cover keeps out cold and rain. A brightly coloured flag makes sure other traffic sees you."
       },
       "fast": {
         "title": "fast",
-        "text": "You push with both legs at the same time and the weight is minimal. Acceleration from standstill is quick, and at speed the aerodynamics help you along."
+        "text": "You push with both legs at once and the dijker weighs very little. That gives you a quick start from standstill, and at speed the streamlined shape helps."
       },
       "free": {
         "title": "free",
-        "text": "Thanks to the open design of the vehicle you get in and out easily. You'll never feel trapped."
+        "text": "The dijker is open, so getting in and out is easy. You are never shut in."
       },
-      "protects": {
-        "title": "protects",
-        "text": "On the road you are well protected by the four strong wheels and the sturdy chassis. A mini poncho between the boot and the nose cover keeps out cold and rain, and a design flag with striking colors keeps you visible."
+      "boot": {
+        "title": "boot",
+        "text": "At the back is one large luggage compartment with no dividers, the boot. It comes off as easily as the nose cover."
       }
     }
   },
   "technique": {
     "heading": "The technique",
     "chassisTitle": "The chassis",
-    "chassis": "The basis of the dijker is the chassis: a flat element that integrates suspension, steering rack, pedal guidance and brake distribution. It also protects the brake cables, the electrics and the drive belt linings with sheathing. Strong and light.",
+    "chassis": "Everything is mounted on the chassis, a flat plate. It holds the suspension, steering rack, pedal guides and brake distribution. The brake cables, wiring and drive belts run through it, out of harm's way. The chassis is strong and light.",
     "driveTitle": "spiral belt drive multispeed®",
-    "drive": "The integral drive system combines drive with a gear system. The left or right belt is wound around a wheel axle in a spiral; the diameter increases or decreases by adding or removing belt length while pushing. You can even downshift at a standstill — impossible with a derailleur on a bicycle.",
+    "drive": "Drive and gearing are one system. Each belt winds around the wheel axle in a spiral. While you push, belt length is added or taken away, which makes the diameter bigger or smaller. You can even shift down while standing still. A bicycle derailleur can't do that.",
     "brakesTitle": "Brakes",
-    "brakes": "All four wheels have light metal drum brakes, operated by pressing the steering column with the steering wheel. Unexpected, but intuitive and safe in practice.",
-    "awardTitle": "Award",
-    "award": "Third prize at the Germersheim Spezialradmesse 2019 inventor competition.",
+    "brakes": "All four wheels have light-alloy drum brakes. You brake by pushing the steering wheel in, and the steering column passes that movement on. It sounds odd, but in practice it comes naturally.",
+    "brakesAlt": "Steering and brakes of the dijker",
+    "awardTitle": "Inventor's award",
+    "award": "Third place in the inventor competition at the Spezialradmesse in Germersheim, 2019.",
     "awardLink": "See the competition",
-    "videoIntro": "Watch the dijker in action.",
-    "videoAnimation": "Animation: the spiral belt drive multispeed® winding around the wheel axle.",
-    "videoDrive": "The spiral belt drive multispeed® in real life — the belts winding around the wheel axle."
+    "videoAnimation": "Animation of the spiral belt drive multispeed®. The belt winds around the wheel axle in a spiral.",
+    "schematic": "3D design drawing of the dijker, showing the chassis, seat, steering and nose cover.",
+    "schematicAlt": "Schematic 3D drawing of the dijker",
+    "videoDrive": "The spiral belt drive multispeed® in real life. Watch the belts wind around the wheel axle."
   },
   "creator": {
-    "heading": "The creator",
+    "heading": "The inventor",
     "name": "Peter-Paul van der Ven",
-    "role": "Engineer & inventor of the dijker",
-    "body1": "Peter-Paul is passionate and future-oriented, with extensive knowledge of physics, materials, tribology, and the design and testing of (sandwich) structures and linear pedal mechanisms.",
-    "body2": "The dijker is a boy's dream come true for him. From childhood he watched our fragile atmosphere pollute. He was determined to make small vehicles with little or no exhaust fumes — vehicles he would really like to ride, and that in the end even car owners would prefer.",
+    "role": "Inventor of the dijker",
+    "body1": "Peter-Paul knows physics, materials and tribology. He designs and tests sandwich structures and linear pedal mechanisms.",
+    "body2": "The dijker is a childhood dream come true. As a boy he saw the air around us getting dirtier. He wanted to build small vehicles with little or no exhaust, vehicles he would want to ride himself. The goal is that car owners will pick one too.",
     "downloads": "Press",
-    "download1": "EHPVA magazine — Dec. 2020 (PDF)",
-    "download2": "Ligfiets& — Sept. 2020, Dutch (PDF)"
+    "download1": "EHPVA magazine, Dec. 2020 (PDF)",
+    "download2": "Ligfiets&, Sept. 2020, Dutch (PDF)"
   },
   "investing": {
     "heading": "Investing",
-    "body": "The dijker is the result of vision and perseverance. The next step is further development and marketing. Would you like to invest in the dijker, or take a major role in the project? Then get in touch.",
-    "cta": "Contact us"
+    "body": "The dijker works. The next step is further development and bringing it to market. Want to invest, or take on a major role in the project? Get in touch.",
+    "cta": "Get in touch"
   },
   "contact": {
-    "heading": "We'd like to hear from you",
-    "sub": "Questions, ideas, or interested in investing? Send a message.",
+    "heading": "Get in touch",
+    "sub": "Have a question or an idea, or want to invest? Send a message.",
     "firstName": "First name",
     "lastName": "Last name",
     "email": "Email",
@@ -89,8 +91,8 @@
     "required": "Required field",
     "send": "Send message",
     "sending": "Sending…",
-    "success": "Thanks! Your message has been sent.",
-    "error": "Something went wrong. Please try again."
+    "success": "Thanks, your message has been sent.",
+    "error": "Sending failed. Please try again."
   },
   "footer": {
     "tagline": "move yourself",

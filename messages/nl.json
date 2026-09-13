@@ -1,11 +1,11 @@
 {
   "metadata": {
-    "title": "the dijker — move yourself",
-    "description": "De dijker is een nieuw type voertuig dat tegelijk heel vertrouwd aanvoelt. Een high-tech voertuig met zijn unieke spiral belt drive multispeed®."
+    "title": "the dijker | move yourself",
+    "description": "De dijker is een vierwielig voertuig dat je met je benen aandrijft. Je remt door het stuur in te drukken en schakelt met je tenen, via de spiral belt drive multispeed®."
   },
   "nav": {
     "home": "Home",
-    "dijker": "De dijker",
+    "dijker": "Highlights",
     "technique": "Techniek",
     "creator": "Uitvinder",
     "investing": "Investeren",
@@ -15,72 +15,74 @@
   "hero": {
     "slogan": "move yourself",
     "title": "the dijker",
-    "lead": "Alsof hij altijd al bestaan heeft: de dijker. Een nieuw type voertuig dat tegelijk heel vertrouwd aanvoelt. Het ademt nostalgie.",
-    "sub": "Maar laat de klassieke lijnen je niet misleiden — de dijker is een high-tech voertuig met zijn unieke spiral belt drive multispeed®.",
+    "lead": "De dijker ziet eruit alsof hij al jaren rondrijdt. Toch bestond zo'n voertuig nog niet.",
+    "sub": "Onder die klassieke vorm zit nieuwe techniek. De dijker rijdt op de spiral belt drive multispeed®, een aandrijving die geen ander voertuig heeft.",
     "cta": "Bekijk de video",
     "contactCta": "Neem contact op"
   },
   "dijker": {
-    "heading": "De dijker",
-    "intro": "Dit zijn vijf unieke eigenschappen van de dijker. Lees maar.",
-    "body1": "De dijker is een nieuw type voertuig. Hij heeft vier wielen en een klein stuur dat je indrukt om te remmen. Hij heeft pedalen voor de aandrijving die recht heen en weer bewegen, links en rechts onafhankelijk. De carrosserie bestaat uit een handige onverdeelde bagageruimte (de boot) en een neuskap — beide eenvoudig af te nemen.",
-    "body2": "Verder: er zijn geen remhendels, en ook geen hendels om te schakelen — je verstelt door je tenen naar achteren te bewegen. Alle hendels zijn wegontworpen. Een dijker rijden is een nieuwe ervaring. Een dijker rijden is leuk.",
+    "heading": "Highlights op één rij",
+    "intro": "Vijf dingen die de dijker anders maken.",
+    "body1": "De dijker heeft vier wielen en een klein stuur. Wil je remmen, dan druk je dat stuur in. De pedalen bewegen in een rechte lijn heen en weer, links en rechts los van elkaar. De carrosserie bestaat uit twee delen: een open bagageruimte, de boot, en een neuskap. Beide haal je er zo af.",
+    "body2": "Remhendels zitten er niet op. Schakelhendels ook niet, want je schakelt door je tenen naar achteren te bewegen. Het rijdt anders dan alles wat je kent, en het is gewoon leuk.",
     "props": {
-      "boot": {
-        "title": "boot",
-        "text": "De carrosserie bestaat uit een handige onverdeelde bagageruimte — de boot — en een neuskap. Beide zijn heel eenvoudig af te nemen."
-      },
       "comfort": {
         "title": "comfort",
-        "text": "Een nieuw ontworpen alternatief voor forenzen die nu met de auto, motor of het openbaar vervoer reizen. Comfortabel, droog en aangenaam — dankzij de zithouding kom je uitgerust en ontspannen aan. Zelfs met de neuskap op is er volop ventilatie, en over de open-stof rugleuning kun je een jas hangen."
+        "text": "Bedoeld voor forenzen die nu de auto, de motor of het openbaar vervoer nemen. Je zit half achterover en blijft droog, dus je komt uitgerust aan. Met de neuskap erop waait er nog genoeg lucht langs, en over de rugleuning van open stof hang je je jas."
+      },
+      "protection": {
+        "title": "bescherming",
+        "text": "Vier stevige wielen en een sterk chassis houden je veilig op de weg. Een kleine poncho tussen de boot en de neuskap houdt kou en regen tegen. De vlag in opvallende kleuren zorgt dat anderen je zien."
       },
       "fast": {
-        "title": "fast",
-        "text": "Je duwt met beide benen tegelijk en het gewicht is minimaal. De acceleratie vanuit stilstand is snel, en op snelheid helpt de aerodynamica je op weg."
+        "title": "snel",
+        "text": "Je duwt met beide benen tegelijk en de dijker weegt weinig. Daardoor trek je vlot op vanuit stilstand, en op snelheid helpt de gestroomlijnde vorm."
       },
       "free": {
-        "title": "free",
-        "text": "Dankzij het open ontwerp van het voertuig stap je makkelijk in en uit. Je voelt je nooit opgesloten."
+        "title": "vrij",
+        "text": "De dijker is open, dus je stapt makkelijk in en uit. Je zit nergens in opgesloten."
       },
-      "protects": {
-        "title": "protects",
-        "text": "Op de weg ben je goed beschermd door de vier sterke wielen en het stevige chassis. Een mini-poncho tussen de boot en de neuskap houdt kou en regen buiten, en een designvlag met opvallende kleuren houdt je zichtbaar."
+      "boot": {
+        "title": "bagage",
+        "text": "Achterin zit één grote bagageruimte zonder tussenschotten, de boot. Die haal je er net zo makkelijk af als de neuskap."
       }
     }
   },
   "technique": {
     "heading": "De techniek",
     "chassisTitle": "Het chassis",
-    "chassis": "De basis van de dijker is het chassis: een vlak element dat vering, stuurhuis, pedaalgeleiding en remverdeling integreert. Het beschermt ook de remkabels, de elektra en de aandrijfriemvoeringen met omhulling. Sterk en licht.",
+    "chassis": "Alles zit vast aan het chassis, een vlakke plaat. Daarin zitten de vering, het stuurhuis, de pedaalgeleiding en de remverdeling. De remkabels, de bedrading en de aandrijfriemen lopen er beschermd doorheen. Het chassis is sterk en licht.",
     "driveTitle": "spiral belt drive multispeed®",
-    "drive": "Het integrale aandrijfsysteem combineert aandrijving met een versnellingssysteem. De linker- of rechterriem wordt spiraalsgewijs om een wielas gewikkeld; de diameter neemt toe of af door riemlengte toe te voegen of weg te halen tijdens het duwen. Je kunt zelfs bij stilstand terugschakelen — onmogelijk met een derailleur op de fiets.",
+    "drive": "Aandrijving en versnelling zitten in één systeem. Elke riem wikkelt zich in een spiraal om de wielas. Tijdens het duwen komt er riem bij of gaat er riem af, en zo wordt de diameter groter of kleiner. Terugschakelen kan zelfs als je stilstaat. Met een derailleur op een fiets lukt dat niet.",
     "brakesTitle": "Remmen",
-    "brakes": "Alle vier de wielen hebben lichtmetalen trommelremmen, bediend door de stuurkolom met het stuur in te drukken. Onverwacht, maar intuïtief en veilig in de praktijk.",
+    "brakes": "Alle vier de wielen hebben een trommelrem van lichtmetaal. Je remt door het stuur in te drukken, de stuurkolom geeft die beweging door. Dat klinkt vreemd, maar in de praktijk doe je het vanzelf goed.",
+    "brakesAlt": "Stuur en remmen van de dijker",
     "awardTitle": "Uitvinders prijs",
-    "award": "Derde prijs bij de uitvinderswedstrijd van de Germersheim Spezialradmesse 2019.",
+    "award": "Derde plaats in de uitvinderswedstrijd van de Spezialradmesse in Germersheim, 2019.",
     "awardLink": "Bekijk de wedstrijd",
-    "videoIntro": "Bekijk de dijker in actie.",
-    "videoAnimation": "Animatie: de spiral belt drive multispeed® die spiraalvormig om de wielas oprolt.",
-    "videoDrive": "De spiral belt drive multispeed® in het echt — de riemen die om de wielas oprollen."
+    "videoAnimation": "Animatie van de spiral belt drive multispeed®. De riem wikkelt zich in een spiraal om de wielas.",
+    "schematic": "3D-ontwerptekening van de dijker, met chassis, zitting, stuur en neuskap.",
+    "schematicAlt": "Schematische 3D-tekening van de dijker",
+    "videoDrive": "De spiral belt drive multispeed® in het echt. Je ziet de riemen om de wielas wikkelen."
   },
   "creator": {
     "heading": "De uitvinder",
     "name": "Peter-Paul van der Ven",
-    "role": "Ingenieur & uitvinder van de dijker",
-    "body1": "Peter-Paul is gepassioneerd en toekomstgericht, met uitgebreide kennis van fysica, materialen, tribologie, en het ontwerpen en testen van (sandwich)constructies en lineaire pedaalmechanismen.",
-    "body2": "De dijker is voor hem een jongensdroom die uitkomt. Van kinds af aan zag hij onze kwetsbare atmosfeer vervuilen. Hij was vastbesloten om kleine voertuigen te maken met weinig of geen uitlaatgassen — voertuigen die hij zelf graag zou rijden, en die uiteindelijk zelfs autobezitters zouden verkiezen.",
+    "role": "Uitvinder van de dijker",
+    "body1": "Peter-Paul kent zich uit in natuurkunde, materialen en tribologie. Hij ontwerpt en test sandwichconstructies en lineaire pedaalmechanismen.",
+    "body2": "Met de dijker komt een jongensdroom uit. Als kind zag hij al hoe de lucht om ons heen vervuilde. Hij wilde kleine voertuigen bouwen die weinig of niets uitstoten, voertuigen waar hij zelf in zou willen rijden. Het doel is dat ook mensen met een auto er uiteindelijk voor kiezen.",
     "downloads": "Pers",
-    "download1": "EHPVA magazine — dec. 2020 (PDF)",
-    "download2": "Ligfiets& — sept. 2020, Nederlands (PDF)"
+    "download1": "EHPVA magazine, dec. 2020 (PDF)",
+    "download2": "Ligfiets&, sept. 2020, Nederlands (PDF)"
   },
   "investing": {
     "heading": "Investeren",
-    "body": "De dijker is het resultaat van visie en doorzettingsvermogen. De volgende stap is verdere ontwikkeling en marketing. Wil je investeren in de dijker, of een grote rol spelen in het project? Neem dan contact op.",
+    "body": "De dijker rijdt. Nu is het tijd om hem verder te ontwikkelen en op de markt te brengen. Wil je investeren, of een grote rol spelen in het project? Neem contact op.",
     "cta": "Neem contact op"
   },
   "contact": {
-    "heading": "We horen graag van je",
-    "sub": "Vragen, ideeën, of interesse om te investeren? Stuur een bericht.",
+    "heading": "Neem contact op",
+    "sub": "Heb je een vraag of een idee, of wil je investeren? Stuur een bericht.",
     "firstName": "Voornaam",
     "lastName": "Achternaam",
     "email": "E-mailadres",
@@ -89,8 +91,8 @@
     "required": "Verplicht veld",
     "send": "Verstuur bericht",
     "sending": "Versturen…",
-    "success": "Bedankt! Je bericht is verstuurd.",
-    "error": "Er ging iets mis. Probeer het opnieuw."
+    "success": "Bedankt, je bericht is verstuurd.",
+    "error": "Het versturen is mislukt. Probeer het nog een keer."
   },
   "footer": {
     "tagline": "move yourself",
