@@ -68,19 +68,29 @@ export function Technique() {
               <h3 className="text-xl font-semibold">{t("brakesTitle")}</h3>
               <p className="text-muted-foreground">{t("brakes")}</p>
             </div>
-            <div className="flex items-start gap-3 rounded-xl border border-border bg-muted/40 p-5">
-              <Award className="mt-0.5 size-6 shrink-0" />
-              <div>
-                <h3 className="font-semibold">{t("awardTitle")}</h3>
-                <p className="text-sm text-muted-foreground">{t("award")}</p>
-                <a
-                  href="https://www.spezialradmesse.de/erfinderlabor.html"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-1 inline-block text-sm font-medium underline underline-offset-4"
-                >
-                  {t("awardLink")}
-                </a>
+            <div className="overflow-hidden rounded-xl border border-border bg-muted/40">
+              <Image
+                src="/media/img007.webp"
+                alt={t("awardAlt")}
+                width={1600}
+                height={1200}
+                sizes="(min-width: 768px) 50vw, 100vw"
+                className="h-auto w-full"
+              />
+              <div className="flex items-start gap-3 p-5">
+                <Award className="mt-0.5 size-6 shrink-0" />
+                <div>
+                  <h3 className="font-semibold">{t("awardTitle")}</h3>
+                  <p className="text-sm text-muted-foreground">{t("award")}</p>
+                  <a
+                    href="https://www.spezialradmesse.de/erfinderlabor.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-1 inline-block text-sm font-medium underline underline-offset-4"
+                  >
+                    {t("awardLink")}
+                  </a>
+                </div>
               </div>
             </div>
           </div>

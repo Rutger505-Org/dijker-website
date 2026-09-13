@@ -18,6 +18,8 @@
     "lead": "De dijker ziet eruit alsof hij al jaren rondrijdt. Toch bestond zo'n voertuig nog niet.",
     "sub": "Onder die klassieke vorm zit nieuwe techniek. De dijker rijdt op de spiral belt drive multispeed®, een aandrijving die geen ander voertuig heeft.",
     "cta": "Bekijk de video",
+    "videoTitle": "This is a dijker",
+    "close": "Sluiten",
     "contactCta": "Neem contact op"
   },
   "dijker": {
@@ -60,6 +62,7 @@
     "awardTitle": "Uitvinders prijs",
     "award": "Derde plaats in de uitvinderswedstrijd van de Spezialradmesse in Germersheim, 2019.",
     "awardLink": "Bekijk de wedstrijd",
+    "awardAlt": "De dijker bij het Erfinderlabor op de Spezialradmesse 2019",
     "videoAnimation": "Animatie van de spiral belt drive multispeed®. De riem wikkelt zich in een spiraal om de wielas.",
     "schematic": "3D-ontwerptekening van de dijker, met chassis, zitting, stuur en neuskap.",
     "schematicAlt": "Schematische 3D-tekening van de dijker",

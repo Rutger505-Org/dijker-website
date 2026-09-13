@@ -1,3 +1,4 @@
+import { VideoDialog } from "@/components/site/video-dialog";
 import { Button } from "@/components/ui/button";
 import { useTranslations } from "next-intl";
 
@@ -33,9 +34,7 @@ export function Hero() {
           <p className="text-lg text-white/90">{t("lead")}</p>
           <p className="text-white/75">{t("sub")}</p>
           <div className="flex flex-wrap gap-3 pt-2">
-            <Button asChild size="lg">
-              <a href="#video">{t("cta")}</a>
-            </Button>
+            <VideoDialog />
             <Button
               asChild
               size="lg"
