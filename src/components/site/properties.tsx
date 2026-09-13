@@ -1,13 +1,7 @@
 import { useTranslations } from "next-intl";
-import { Package, Armchair, Gauge, Unlock, ShieldCheck } from "lucide-react";
+import Image from "next/image";
 
-const items = [
-  { key: "boot", Icon: Package },
-  { key: "comfort", Icon: Armchair },
-  { key: "fast", Icon: Gauge },
-  { key: "free", Icon: Unlock },
-  { key: "protects", Icon: ShieldCheck },
-] as const;
+const items = ["comfort", "protection", "fast", "free", "boot"] as const;
 
 export function Properties() {
   const t = useTranslations("dijker");
@@ -28,18 +22,27 @@ export function Properties() {
         </div>
 
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
-          {items.map(({ key, Icon }) => (
+          {items.map((key) => (
             <div
               key={key}
-              className="rounded-xl border border-border bg-background p-6"
+              className="overflow-hidden rounded-xl border border-border bg-background"
             >
-              <Icon className="size-6 text-foreground" />
-              <h3 className="mt-4 text-lg font-semibold">
-                {t(`props.${key}.title`)}
-              </h3>
-              <p className="mt-2 text-sm text-muted-foreground">
-                {t(`props.${key}.text`)}
-              </p>
+              <Image
+                src={`/media/highlights/${key}.webp`}
+                alt=""
+                width={1056}
+                height={393}
+                sizes="(min-width: 1024px) 220px, (min-width: 640px) 50vw, 100vw"
+                className="h-auto w-full"
+              />
+              <div className="p-6 pt-4">
+                <h3 className="text-lg font-semibold">
+                  {t(`props.${key}.title`)}
+                </h3>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  {t(`props.${key}.text`)}
+                </p>
+              </div>
             </div>
           ))}
         </div>
