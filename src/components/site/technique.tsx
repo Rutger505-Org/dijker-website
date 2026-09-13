@@ -68,6 +68,19 @@ export function Technique() {
               <h3 className="text-xl font-semibold">{t("brakesTitle")}</h3>
               <p className="text-muted-foreground">{t("brakes")}</p>
             </div>
+          </div>
+
+          <div className="space-y-8">
+            <div className="overflow-hidden rounded-xl border border-border bg-muted">
+              <Image
+                src="/media/brake_lever.webp"
+                alt={t("brakesAlt")}
+                width={1600}
+                height={764}
+                sizes="(min-width: 768px) 50vw, 100vw"
+                className="h-auto w-full"
+              />
+            </div>
             <div className="overflow-hidden rounded-xl border border-border bg-muted/40">
               <Image
                 src="/media/img007.webp"
@@ -93,17 +106,6 @@ export function Technique() {
                 </div>
               </div>
             </div>
-          </div>
-
-          <div className="overflow-hidden rounded-xl border border-border bg-muted">
-            <Image
-              src="/media/brake_lever.webp"
-              alt={t("brakesAlt")}
-              width={1600}
-              height={764}
-              sizes="(min-width: 768px) 50vw, 100vw"
-              className="h-full w-full object-cover"
-            />
           </div>
         </div>
       </div>
