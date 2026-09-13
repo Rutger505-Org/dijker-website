@@ -11,6 +11,8 @@ export const siteUrl = (
 
 export const siteName = "the dijker";
 
+export const contactEmail = "info@dijker.eu";
+
 export const ogImage = "/media/img007.webp";
 
 /**

@@ -49,10 +49,12 @@ The following secrets are configured at the organisation level and are inherited
 - `TAILSCALE_OAUTH_CLIENT_ID` - Tailscale OAuth client ID used to connect the CI runner to the private cluster network.
 - `TAILSCALE_OAUTH_SECRET` - Tailscale OAuth secret paired with the client ID above.
 - `DOCKERHUB_TOKEN` - Docker Hub access token.
-- `DEPLOYMENT_AUTH_EMAIL_HOST` - SMTP host (e.g. `smtp.gmail.com`).
-- `DEPLOYMENT_AUTH_EMAIL_PORT` - SMTP port (e.g. `465`).
-- `DEPLOYMENT_AUTH_EMAIL_USER` - SMTP username (for Gmail, this is your email address).
-- `DEPLOYMENT_AUTH_EMAIL_PASSWORD` - SMTP password (for Gmail, use an App Password).
+- `DEPLOYMENT_AUTH_EMAIL_HOST` - SMTP host. This site sends through Strato, so override it per repository with `smtp.strato.com`.
+- `DEPLOYMENT_AUTH_EMAIL_PORT` - SMTP port (`465` for Strato, SSL).
+- `DEPLOYMENT_AUTH_EMAIL_USER` - SMTP username. For Strato this is the full mailbox address, `info@dijker.eu`. Strato rejects mail whose From address differs from this mailbox.
+- `DEPLOYMENT_AUTH_EMAIL_PASSWORD` - Password of that Strato mailbox.
+
+The contact form always delivers to `info@dijker.eu` (see `contactEmail` in `src/lib/site.ts`).
 
 ## Deployments
 
