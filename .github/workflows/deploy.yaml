@@ -170,8 +170,8 @@ jobs:
 
           docker compose -f compose.proxy.yml up -d
           # A freshly created Caddy may not have its admin API up yet.
-          docker compose -f compose.proxy.yml exec caddy caddy reload --config /etc/caddy/Caddyfile \
-            || { sleep 5; docker compose -f compose.proxy.yml exec caddy caddy reload --config /etc/caddy/Caddyfile; }
+          docker compose -f compose.proxy.yml exec -T caddy caddy reload --config /etc/caddy/Caddyfile \
+            || { sleep 5; docker compose -f compose.proxy.yml exec -T caddy caddy reload --config /etc/caddy/Caddyfile; }
 
           docker compose -p 'dijker-$ENVIRONMENT' -f compose.app.yml up -d --pull always --remove-orphans
           docker image prune -af --filter until=168h
