@@ -1,0 +1,31 @@
+services:
+  migrate:
+    image: ${APP_IMAGE:?}
+    command: ["sh", "-c", "cd /app && bun db:migrate"]
+    env_file: ${ENV_FILE:?}
+    volumes:
+      - sqlite_data:/app/data
+    restart: "no"
+
+  web:
+    image: ${APP_IMAGE:?}
+    env_file: ${ENV_FILE:?}
+    volumes:
+      - sqlite_data:/app/data
+    networks:
+      web:
+        aliases:
+          - ${ENVIRONMENT:?}
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+    mem_limit: 512m
+    restart: unless-stopped
+
+networks:
+  web:
+    name: dijker-web
+    external: true
+
+volumes:
+  sqlite_data:

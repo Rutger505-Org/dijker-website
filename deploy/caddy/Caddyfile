@@ -1,0 +1,38 @@
+{
+	on_demand_tls {
+		ask http://localhost:9123/
+	}
+}
+
+{$BASE_DOMAIN} {
+	encode
+	reverse_proxy production:3000
+}
+
+*.{$BASE_DOMAIN} {
+	tls {
+		on_demand
+	}
+
+	@preview header_regexp preview Host ^(pr-[0-9]+)[.]
+	handle @preview {
+		encode
+		reverse_proxy {re.preview.1}:3000
+	}
+
+	respond 404
+}
+
+# Only issue a preview certificate when that preview's container is actually
+# running, so random subdomains can't burn the Let's Encrypt rate limit that is
+# shared with every other *.rutgerpronk.com site. favicon.ico is used because
+# it is a plain 200 that the locale middleware doesn't redirect.
+http://localhost:9123 {
+	@preview vars_regexp preview {query.domain} ^(pr-[0-9]+)[.]
+	handle @preview {
+		rewrite * /favicon.ico
+		reverse_proxy {re.preview.1}:3000
+	}
+
+	respond 403
+}
