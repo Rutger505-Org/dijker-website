@@ -34,11 +34,11 @@ export function LanguageSwitcher() {
   const current = LOCALES[locale];
 
   return (
-    <DropdownMenu>
+    <DropdownMenu modal={false}>
       <DropdownMenuTrigger
         aria-busy={isPending}
         aria-label="Change language"
-        className="flex items-center gap-1.5 rounded-md px-1.5 py-1 text-sm font-medium outline-none transition-colors hover:bg-foreground/10 focus-visible:ring-2 focus-visible:ring-ring"
+        className="flex cursor-pointer items-center gap-1.5 rounded-md px-1.5 py-1 text-sm font-medium outline-none transition-colors hover:bg-foreground/10 focus-visible:ring-2 focus-visible:ring-ring"
       >
         <span className={cn("fi rounded-[2px]", current?.flag)} />
         <ChevronDown className="size-4" aria-hidden />
@@ -51,7 +51,7 @@ export function LanguageSwitcher() {
               key={l}
               onSelect={() => switchTo(l)}
               aria-current={l === locale ? "true" : undefined}
-              className="gap-2.5"
+              className="cursor-pointer gap-2.5"
             >
               <span className={cn("fi rounded-[2px]", meta?.flag)} />
               <span className={cn(l === locale && "font-bold")}>
