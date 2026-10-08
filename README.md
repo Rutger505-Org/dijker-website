@@ -78,6 +78,7 @@ To pass additional environment variables to the running container, create a GitH
 - A `dijker` user in the `docker` group, with the deploy public key in `~/.ssh/authorized_keys`.
 - Ports `22`, `80` and `443` open.
 - DNS `A` records for `<BASE_DOMAIN>` and `*.<BASE_DOMAIN>` pointing to the VM.
+- DNS `A` records for the old domain `dijkersite.eu` and `www.dijkersite.eu` pointing to the VM. Caddy 301-redirects every old page to its section on `<BASE_DOMAIN>` (see the [Caddyfile](deploy/caddy/Caddyfile)).
 
 ## Guides
 

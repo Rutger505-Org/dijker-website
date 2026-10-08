@@ -9,6 +9,29 @@
 	reverse_proxy production:3000
 }
 
+# Old Strato site. Every known URL gets a 301 to its matching section so its
+# ranking carries over. Dutch slugs are from the pre-2024 Dutch version, English
+# ones from the current site; unknown paths fall back to the English home page.
+dijkersite.eu, www.dijkersite.eu {
+	map {path} {new_path} {
+		~^/the-dijker(/.*)?$ /en/#dijker
+		~^/the-technique(/.*)?$ /en/#technique
+		~^/the-creator(/.*)?$ /en/#creator
+		~^/investing(/.*)?$ /en/#investing
+		~^/contact(/.*)?$ /en/#contact
+		~^/de-dijker(/.*)?$ /nl/#dijker
+		~^/de-techniek(/.*)?$ /nl/#technique
+		~^/de-bedenker(/.*)?$ /nl/#creator
+		~^/investeren(/.*)?$ /nl/#investing
+		~/Ligfiets2020_3_Dijker\.pdf$ /media/Ligfiets-2020.pdf
+		~/Eusupino2020_Dijker\.pdf$ /media/EHPVA-magazine-2020.pdf
+		~/\.relaxen\.mp4/video\.mp4$ /media/relaxen.mp4
+		"~/\.dijker aandrijving\.mp4/video\.mp4$" /media/dijker_aandrijving.mp4
+		default /en/
+	}
+	redir https://{$BASE_DOMAIN}{new_path} permanent
+}
+
 *.{$BASE_DOMAIN} {
 	tls {
 		on_demand
