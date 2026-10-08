@@ -28,8 +28,11 @@ bun dev
 
 #### Variables
 
-- `APPLICATION_NAME` - Used as an identifier for multiple actions such as the Kubernetes deployment name and Terraform workspace.
-- `BASE_DOMAIN` - Domain where to host the application. Tags are deployed to this domain; pull requests to a subdomain using the commit SHA (e.g. `<sha>.yourdomain.com`).
+- `APPLICATION_NAME` - Docker Hub image name.
+- `BASE_DOMAIN` - Domain where to host the application. `main` is deployed to this domain; pull requests to `pr-<number>.<BASE_DOMAIN>`.
+- `VM_HOST` - Public IP or hostname of the deploy VM.
+- `VM_USER` - SSH user on the VM (`dijker`).
+- `VM_KNOWN_HOSTS` - The VM's SSH host key line(s), from `ssh-keyscan <VM_HOST>`.
 - `DEPLOYMENT_AUTH_EMAIL_FROM` - Display name shown as the sender of the magic link emails (e.g. `Next Template`). The actual sender address is taken from `AUTH_EMAIL_USER`; the `From` header is composed as `AUTH_EMAIL_FROM <AUTH_EMAIL_USER>`.
 
 The following variables are configured at the organisation level and are inherited automatically — no action needed per repository.
@@ -42,12 +45,10 @@ The following secrets must be configured per repository.
 
 - `DEPLOYMENT_AUTH_SECRET` - Better Auth secret for encrypting JWTs (generate with `bunx auth secret --raw`).
 - `DEPLOYMENT_DISCORD_WEBHOOK_URL` - Discord webhook URL for in-application alerts.
+- `VM_SSH_KEY` - Private key of the deploy key pair, whose public key is in `~dijker/.ssh/authorized_keys` on the VM.
 
 The following secrets are configured at the organisation level and are inherited automatically — no action needed per repository.
 
-- `KUBECONFIG` - Kubernetes cluster config for deploying to the cluster.
-- `TAILSCALE_OAUTH_CLIENT_ID` - Tailscale OAuth client ID used to connect the CI runner to the private cluster network.
-- `TAILSCALE_OAUTH_SECRET` - Tailscale OAuth secret paired with the client ID above.
 - `DOCKERHUB_TOKEN` - Docker Hub access token.
 - `DEPLOYMENT_AUTH_EMAIL_HOST` - SMTP host. This site sends through Strato, so override it per repository with `smtp.strato.com`.
 - `DEPLOYMENT_AUTH_EMAIL_PORT` - SMTP port (`465` for Strato, SSL).
@@ -58,7 +59,24 @@ The contact form always delivers to `info@dijker.eu` (see `contactEmail` in `src
 
 ## Deployments
 
-To pass additional environment variables to the running container, create a GitHub variable or secret and prefix the name with `DEPLOYMENT_`. The prefix is stripped before the value is injected into the container.
+Everything runs on a single VM with Docker Compose, deployed over SSH by [deploy.yaml](.github/workflows/deploy.yaml):
+
+- Push to `main` → production on `<BASE_DOMAIN>`.
+- Pull request → preview on `pr-<number>.<BASE_DOMAIN>`, removed (including its database) when the PR closes.
+
+On the VM, `~/dijker-website/` holds the files from [deploy/](deploy) plus `env/<environment>.env`, all uploaded by CI:
+
+- `compose.proxy.yml` - one Caddy for all environments, terminating TLS with Let's Encrypt certificates. Previews get theirs on demand on first request.
+- `compose.app.yml` - one compose project per environment (`dijker-production`, `dijker-pr-12`, ...), each with its own SQLite volume. The `migrate` service runs `bun db:migrate` before `web` starts.
+
+To pass additional environment variables to the running container, create a GitHub variable or secret and prefix the name with `DEPLOYMENT_`. The prefix is stripped before the value is injected into the container. Values can't contain a single quote.
+
+### VM setup
+
+- Docker with the compose plugin.
+- A `dijker` user in the `docker` group, with the deploy public key in `~/.ssh/authorized_keys`.
+- Ports `22`, `80` and `443` open.
+- DNS `A` records for `<BASE_DOMAIN>` and `*.<BASE_DOMAIN>` pointing to the VM.
 
 ## Guides
 
@@ -83,49 +101,10 @@ delete the migration file, delete the new snapshot file in the meta-folder and r
 
 When thats done you can run the migration command again.
 
-#### Database in Kubernetes
+#### Database on the VM
 
-You can copy the sqlite file over this command:
-
-```bash
-kubectl cp <namespace>/<pod-name>:/app/data/db.sqlite ./prod-db.sqlite
-```
-
-With k9s you can copy the pod name with `c`
-
-Windows with Datagrip shows a warning locking issues will occur because of WSL.
-Copy the file to your Windows filesystem with the following command:
+Copy the production SQLite file off the VM:
 
 ```bash
-kubectl cp <namespace>/<pod-name>:/app/data/db.sqlite  /mnt/c/Users/<user>/Documents/
+ssh dijker@<VM_HOST> docker cp dijker-production-web-1:/app/data/db.sqlite - > prod-db.tar
 ```
-
-## Deploying on a single VM (Docker Compose)
-
-An alternative to Kubernetes for running production on a plain VM. Caddy sits in
-front and terminates TLS with automatic Let's Encrypt certificates, replacing
-the cert-manager + Ingress layer. The app itself only serves plain HTTP.
-
-Files: [docker-compose.yml](docker-compose.yml), [Caddyfile](Caddyfile),
-[.env.production.example](.env.production.example).
-
-### Requirements
-
-- A DNS `A` record for your domain pointing to the VM's public IP (set it
-  **before** first start so the ACME challenge succeeds).
-- Ports `80` and `443` open (`80` is needed for the HTTP-01 challenge).
-
-### Steps
-
-```bash
-cp .env.production.example .env
-# fill in AUTH_SECRET, AUTH_EMAIL_PASSWORD, APP_DOMAIN, etc.
-
-docker compose up -d --build
-docker compose logs -f caddy   # watch for certificate issuance
-```
-
-The `migrate` service runs `bun db:migrate` once and exits; the `web` service
-starts only after it completes successfully. SQLite lives in the `sqlite_data`
-volume and the issued certificates in the `caddy_data` volume — keep both
-persistent (losing `caddy_data` can hit Let's Encrypt rate limits on restart).

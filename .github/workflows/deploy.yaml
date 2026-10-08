@@ -1,0 +1,214 @@
+name: Deploy
+
+on:
+  workflow_call:
+    secrets:
+      DOCKERHUB_TOKEN:
+        required: true
+      VM_SSH_KEY:
+        required: true
+
+# Serialize deploy/destroy per environment so a still-running deploy and the
+# destroy triggered by merging/closing the PR never race on the same compose project.
+concurrency:
+  group: deploy-${{ github.event.pull_request.number || github.ref_name }}
+  cancel-in-progress: false
+
+jobs:
+  configure:
+    name: Generate Configuration
+    runs-on: ubuntu-latest
+    outputs:
+      environment: ${{ steps.config.outputs.environment }}
+      is_production: ${{ steps.config.outputs.is_production }}
+      image: ${{ steps.config.outputs.image }}
+      hostname: ${{ steps.config.outputs.hostname }}
+
+    steps:
+      - name: Configuration
+        id: config
+        env:
+          BASE_DOMAIN: ${{ vars.BASE_DOMAIN }}
+          APPLICATION_NAME: ${{ vars.APPLICATION_NAME }}
+          DOCKERHUB_USERNAME: ${{ vars.DOCKERHUB_USERNAME }}
+          VM_HOST: ${{ vars.VM_HOST }}
+          VM_USER: ${{ vars.VM_USER }}
+          VM_KNOWN_HOSTS: ${{ vars.VM_KNOWN_HOSTS }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          set -euo pipefail
+
+          missing=()
+          for name in BASE_DOMAIN APPLICATION_NAME DOCKERHUB_USERNAME VM_HOST VM_USER VM_KNOWN_HOSTS; do
+            [ -z "${!name:-}" ] && missing+=("$name")
+          done
+          if [ ${#missing[@]} -gt 0 ]; then
+            echo "::error::Missing required variables: ${missing[*]}"
+            exit 1
+          fi
+
+          # On a pull_request "closed" event GitHub sets github.ref to the base
+          # branch (refs/heads/main), not a PR ref, so this must also require
+          # the push event or a merged PR gets misclassified as production.
+          if [ "${{ github.event_name }}" = "push" ] && [ "${{ github.ref }}" = "refs/heads/main" ]; then
+            environment=production
+            is_production=true
+            hostname="$BASE_DOMAIN"
+          else
+            environment="pr-${PR_NUMBER}"
+            is_production=false
+            hostname="pr-${PR_NUMBER}.$BASE_DOMAIN"
+          fi
+
+          image="$DOCKERHUB_USERNAME/$APPLICATION_NAME:${{ github.sha }}"
+
+          {
+            echo "environment=$environment"
+            echo "is_production=$is_production"
+            echo "image=$image"
+            echo "hostname=$hostname"
+          } >>"$GITHUB_OUTPUT"
+
+          {
+            echo "# Deployment Configuration 🚀"
+            echo "| Parameter | Value |"
+            echo "| - | - |"
+            echo "| environment | $environment |"
+            echo "| image | $image |"
+            echo "| hostname | $hostname |"
+          } >>"$GITHUB_STEP_SUMMARY"
+
+  build-docker-image:
+    if: github.event.action != 'closed'
+    name: Build Docker image
+    needs: [configure]
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ vars.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: true
+          tags: ${{ needs.configure.outputs.image }}
+          cache-from: |
+            type=gha,scope=${{ github.ref_name }}
+            type=gha,scope=main
+          cache-to: type=gha,mode=max,scope=${{ github.ref_name }}
+
+  deploy-to-vm:
+    if: github.event.action != 'closed'
+    name: Deploy to VM
+    needs: [configure, build-docker-image]
+    runs-on: ubuntu-latest
+
+    environment:
+      name: ${{ needs.configure.outputs.environment }}
+      url: https://${{ needs.configure.outputs.hostname }}
+
+    env:
+      ENVIRONMENT: ${{ needs.configure.outputs.environment }}
+      IMAGE: ${{ needs.configure.outputs.image }}
+      DEPLOY_HOSTNAME: ${{ needs.configure.outputs.hostname }}
+      BASE_DOMAIN: ${{ vars.BASE_DOMAIN }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup SSH
+        uses: ./.github/actions/setup-ssh
+        with:
+          host: ${{ vars.VM_HOST }}
+          user: ${{ vars.VM_USER }}
+          private-key: ${{ secrets.VM_SSH_KEY }}
+          known-hosts: ${{ vars.VM_KNOWN_HOSTS }}
+
+      - name: Generate env file
+        env:
+          SECRETS: ${{ toJSON(secrets) }}
+          VARS: ${{ toJSON(vars) }}
+        run: |
+          set -euo pipefail
+
+          # Pick out DEPLOYMENT_-prefixed vars/secrets and strip the prefix,
+          # e.g. DEPLOYMENT_AUTH_EMAIL_FROM -> AUTH_EMAIL_FROM. Values are
+          # single-quoted so compose takes them literally (no $ interpolation),
+          # which means they can't contain a single quote themselves.
+          umask 077
+          jq -n -r --argjson vars "$VARS" --argjson secrets "$SECRETS" '
+            $vars + $secrets
+            | to_entries[]
+            | select(.key | startswith("DEPLOYMENT_"))
+            | if (.value | contains("'\''")) then error("\(.key) contains a single quote")
+              else "\(.key | sub("^DEPLOYMENT_"; ""))='\''\(.value)'\''" end
+          ' >app.env
+
+      - name: Upload compose files
+        run: |
+          ssh vm mkdir -p dijker-website/env
+          scp -r deploy/compose.proxy.yml deploy/compose.app.yml deploy/caddy vm:dijker-website/
+          scp app.env "vm:dijker-website/env/$ENVIRONMENT.env"
+
+      - name: Start containers
+        run: |
+          ssh vm bash -euo pipefail <<EOF
+          cd dijker-website
+          export BASE_DOMAIN='$BASE_DOMAIN' ENVIRONMENT='$ENVIRONMENT' APP_IMAGE='$IMAGE' ENV_FILE='env/$ENVIRONMENT.env'
+
+          docker compose -f compose.proxy.yml up -d
+          # A freshly created Caddy may not have its admin API up yet. exec reads
+          # stdin even with -T, which would swallow the rest of this heredoc.
+          docker compose -f compose.proxy.yml exec -T caddy caddy reload --config /etc/caddy/Caddyfile </dev/null \
+            || { sleep 5; docker compose -f compose.proxy.yml exec -T caddy caddy reload --config /etc/caddy/Caddyfile </dev/null; }
+
+          docker compose -p 'dijker-$ENVIRONMENT' -f compose.app.yml up -d --pull always --remove-orphans
+          docker image prune -af --filter until=168h
+          EOF
+
+      - name: Smoke test
+        run: curl --fail --silent --show-error --output /dev/null --retry 12 --retry-delay 5 --retry-all-errors "https://$DEPLOY_HOSTNAME/"
+
+  destroy-pr-environment:
+    if: github.event.action == 'closed'
+      && needs.configure.outputs.is_production == 'false'
+      && startsWith(needs.configure.outputs.environment, 'pr-')
+    name: Destroy PR Environment
+    needs: [configure]
+    runs-on: ubuntu-latest
+
+    env:
+      ENVIRONMENT: ${{ needs.configure.outputs.environment }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup SSH
+        uses: ./.github/actions/setup-ssh
+        with:
+          host: ${{ vars.VM_HOST }}
+          user: ${{ vars.VM_USER }}
+          private-key: ${{ secrets.VM_SSH_KEY }}
+          known-hosts: ${{ vars.VM_KNOWN_HOSTS }}
+
+      - name: Remove containers and data
+        run: |
+          ssh vm bash -euo pipefail <<EOF
+          cd dijker-website
+          export ENVIRONMENT='$ENVIRONMENT' APP_IMAGE=unused ENV_FILE=/dev/null
+          docker compose -p 'dijker-$ENVIRONMENT' -f compose.app.yml down --volumes
+          rm -f 'env/$ENVIRONMENT.env'
+          EOF

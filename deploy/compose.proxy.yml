@@ -1,0 +1,28 @@
+name: dijker-proxy
+
+services:
+  caddy:
+    image: caddy:2
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    environment:
+      BASE_DOMAIN: ${BASE_DOMAIN:?}
+    volumes:
+      - ./caddy:/etc/caddy:ro
+      # Holds the issued certificates and ACME account; losing it forces
+      # re-issuance and can hit Let's Encrypt rate limits.
+      - caddy_data:/data
+      - caddy_config:/config
+    networks:
+      - web
+    restart: unless-stopped
+
+networks:
+  web:
+    name: dijker-web
+
+volumes:
+  caddy_data:
+  caddy_config:

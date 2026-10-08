@@ -1,0 +1,31 @@
+name: Setup SSH
+description: Configure the `vm` SSH host alias for the deploy VM
+
+inputs:
+  host:
+    required: true
+  user:
+    required: true
+  private-key:
+    required: true
+  known-hosts:
+    required: true
+
+runs:
+  using: composite
+  steps:
+    - name: Write SSH config
+      shell: bash
+      env:
+        HOST: ${{ inputs.host }}
+        USER: ${{ inputs.user }}
+        PRIVATE_KEY: ${{ inputs.private-key }}
+        KNOWN_HOSTS: ${{ inputs.known-hosts }}
+      run: |
+        set -euo pipefail
+        mkdir -p ~/.ssh
+        chmod 700 ~/.ssh
+        printf '%s\n' "$PRIVATE_KEY" >~/.ssh/id_ed25519
+        chmod 600 ~/.ssh/id_ed25519
+        printf '%s\n' "$KNOWN_HOSTS" >~/.ssh/known_hosts
+        printf 'Host vm\n  HostName %s\n  User %s\n  IdentityFile ~/.ssh/id_ed25519\n' "$HOST" "$USER" >~/.ssh/config
