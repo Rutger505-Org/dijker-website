@@ -12,7 +12,6 @@ export function Footer() {
           <p className="uppercase tracking-[0.3em]">{t("tagline")}</p>
         </div>
         <div className="md:text-right">
-          <p>{t("trademark")}</p>
           <p>
             © {year} the dijker. {t("rights")}
           </p>
