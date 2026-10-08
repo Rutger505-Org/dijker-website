@@ -1,7 +1,6 @@
 "use server";
 
 import { env } from "@/env";
-import { contactEmail } from "@/lib/site";
 import nodemailer from "nodemailer";
 import { z } from "zod";
 
@@ -47,7 +46,7 @@ export async function submitContact(
 
   try {
     const result = await transporter.sendMail({
-      to: contactEmail,
+      to: env.CONTACT_EMAIL,
       from: `${env.AUTH_EMAIL_FROM} <${env.AUTH_EMAIL_USER}>`,
       replyTo: email,
       subject: `the dijker: new contact from ${firstName} ${lastName}`,

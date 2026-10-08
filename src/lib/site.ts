@@ -11,8 +11,6 @@ export const siteUrl = (
 
 export const siteName = "the dijker";
 
-export const contactEmail = "rutger.pronk11@gmail.com";
-
 export const ogImage = "/media/img007.webp";
 
 /**
