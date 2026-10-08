@@ -40,6 +40,7 @@ dijkersite.eu, www.dijkersite.eu {
 	@preview header_regexp preview Host ^(pr-[0-9]+)[.]
 	handle @preview {
 		encode
+		header X-Robots-Tag "noindex, nofollow"
 		reverse_proxy {re.preview.1}:3000
 	}
 

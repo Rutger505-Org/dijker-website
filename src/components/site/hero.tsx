@@ -1,8 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { useTranslations } from "next-intl";
+import { preload } from "react-dom";
+
+const poster = "/media/relaxen-poster.webp";
 
 export function Hero() {
   const t = useTranslations("hero");
+  // The poster is the LCP element but only gets discovered once the <video>
+  // is parsed, so hint it to the browser up front.
+  preload(poster, { as: "image", fetchPriority: "high" });
 
   return (
     <section
@@ -12,7 +18,7 @@ export function Hero() {
       <video
         className="absolute inset-0 -z-20 h-full w-full object-cover"
         src="/media/relaxen.mp4"
-        poster="/media/relaxen-poster.webp"
+        poster={poster}
         autoPlay
         muted
         loop

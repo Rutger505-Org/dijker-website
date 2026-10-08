@@ -1,8 +1,9 @@
 "use client";
 
 import { LanguageSwitcher } from "@/components/site/language-switcher";
+import { localePath } from "@/lib/site";
 import { Menu, X } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -16,12 +17,13 @@ const sections = [
 
 export function Header() {
   const t = useTranslations("nav");
+  const home = localePath(useLocale());
   const [open, setOpen] = useState(false);
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 bg-primary text-primary-foreground shadow-sm">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
-        <a href="#top" aria-label="the dijker" className="flex items-center">
+        <a href={`${home}#top`} aria-label="the dijker" className="flex items-center">
           <Image
             src="/media/dijker-logo.webp"
             alt="the dijker"
@@ -37,7 +39,7 @@ export function Header() {
           {sections.map((s) => (
             <a
               key={s}
-              href={`#${s}`}
+              href={`${home}#${s}`}
               className="text-sm text-primary-foreground/80 transition-colors hover:text-primary-foreground"
             >
               {t(s)}
@@ -64,7 +66,7 @@ export function Header() {
             {sections.map((s) => (
               <li key={s}>
                 <a
-                  href={`#${s}`}
+                  href={`${home}#${s}`}
                   onClick={() => setOpen(false)}
                   className="block py-1 text-base font-medium"
                 >

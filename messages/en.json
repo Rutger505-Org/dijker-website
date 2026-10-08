@@ -95,7 +95,13 @@
     "success": "Thanks, your message has been sent.",
     "error": "Sending failed. Please try again."
   },
+  "notFound": {
+    "heading": "Page not found",
+    "body": "This page does not exist (anymore). You might find what you are looking for on the home page.",
+    "home": "Go to the home page"
+  },
   "footer": {
+    "language": "Language",
     "tagline": "move yourself",
     "trademark": "spiral belt drive multispeed® is a registered trademark.",
     "rights": "All rights reserved."

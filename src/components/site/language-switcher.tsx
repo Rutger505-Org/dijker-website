@@ -6,17 +6,13 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { localeMeta } from "@/i18n/locales";
 import { usePathname, useRouter } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
 import { ChevronDown } from "lucide-react";
 import { useLocale } from "next-intl";
 import { useTransition } from "react";
-
-const LOCALES: Record<string, { label: string; flag: string }> = {
-  nl: { label: "Nederlands", flag: "fi-nl" },
-  en: { label: "English", flag: "fi-gb" },
-};
 
 export function LanguageSwitcher() {
   const locale = useLocale();
@@ -31,7 +27,7 @@ export function LanguageSwitcher() {
     });
   }
 
-  const current = LOCALES[locale];
+  const current = localeMeta[locale];
 
   return (
     <DropdownMenu modal={false}>
@@ -45,7 +41,7 @@ export function LanguageSwitcher() {
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="min-w-40">
         {routing.locales.map((l) => {
-          const meta = LOCALES[l];
+          const meta = localeMeta[l];
           return (
             <DropdownMenuItem
               key={l}
