@@ -34,6 +34,7 @@ bun dev
 - `VM_USER` - SSH user on the VM (`dijker`).
 - `VM_KNOWN_HOSTS` - The VM's SSH host key line(s), from `ssh-keyscan <VM_HOST>`.
 - `DEPLOYMENT_AUTH_EMAIL_FROM` - Display name shown as the sender of the magic link emails (e.g. `Next Template`). The actual sender address is taken from `AUTH_EMAIL_USER`; the `From` header is composed as `AUTH_EMAIL_FROM <AUTH_EMAIL_USER>`.
+- `DEPLOYMENT_CONTACT_EMAIL` - Address the contact form delivers to (`info@dijker.eu`).
 
 The following variables are configured at the organisation level and are inherited automatically — no action needed per repository.
 
@@ -46,16 +47,16 @@ The following secrets must be configured per repository.
 - `DEPLOYMENT_AUTH_SECRET` - Better Auth secret for encrypting JWTs (generate with `bunx auth secret --raw`).
 - `DEPLOYMENT_DISCORD_WEBHOOK_URL` - Discord webhook URL for in-application alerts.
 - `VM_SSH_KEY` - Private key of the deploy key pair, whose public key is in `~dijker/.ssh/authorized_keys` on the VM.
+- `DEPLOYMENT_AUTH_EMAIL_HOST` - SMTP host, `smtp.strato.com`.
+- `DEPLOYMENT_AUTH_EMAIL_PORT` - SMTP port, `465`. The app always connects with SSL, so STARTTLS on `587` won't work.
+- `DEPLOYMENT_AUTH_EMAIL_USER` - Full Strato mailbox address, e.g. `development@dijker.eu`. It is also the sender address, as Strato rejects mail whose From differs from the login.
+- `DEPLOYMENT_AUTH_EMAIL_PASSWORD` - Password of that Strato mailbox.
+
+The four mail settings must be repository **secrets**: the organisation has secrets with the same names, and a secret always wins over a variable.
 
 The following secrets are configured at the organisation level and are inherited automatically — no action needed per repository.
 
 - `DOCKERHUB_TOKEN` - Docker Hub access token.
-- `DEPLOYMENT_AUTH_EMAIL_HOST` - SMTP host. This site sends through Strato, so override it per repository with `smtp.strato.com`.
-- `DEPLOYMENT_AUTH_EMAIL_PORT` - SMTP port (`465` for Strato, SSL).
-- `DEPLOYMENT_AUTH_EMAIL_USER` - SMTP username. For Strato this is the full mailbox address, `info@dijker.eu`. Strato rejects mail whose From address differs from this mailbox.
-- `DEPLOYMENT_AUTH_EMAIL_PASSWORD` - Password of that Strato mailbox.
-
-The contact form always delivers to `info@dijker.eu` (see `contactEmail` in `src/lib/site.ts`).
 
 ## Deployments
 

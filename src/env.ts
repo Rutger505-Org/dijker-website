@@ -17,6 +17,8 @@ export const env = createEnv({
     AUTH_EMAIL_PORT: z.coerce.number(),
     AUTH_EMAIL_USER: z.string(),
     AUTH_EMAIL_PASSWORD: z.string(),
+
+    CONTACT_EMAIL: z.string().email(),
   },
   // Prefixed with NEXT_PUBLIC_
   client: {},
