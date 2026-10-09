@@ -1,6 +1,7 @@
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { Award } from "lucide-react";
+import { YouTubeEmbed } from "@/components/site/youtube-embed";
 
 export function Technique() {
   const t = useTranslations("technique");
@@ -15,14 +16,11 @@ export function Technique() {
         <div id="video" className="mt-10 grid gap-6 scroll-mt-24 md:grid-cols-2">
           <div className="space-y-2">
             <div className="aspect-video overflow-hidden rounded-xl border border-border bg-black">
-              <iframe
-                className="h-full w-full"
-                src="https://www.youtube-nocookie.com/embed/ZofyjBrF9A8"
+              <YouTubeEmbed
+                id="ZofyjBrF9A8"
                 title="the dijker, spiral belt drive animation"
-                loading="lazy"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerPolicy="strict-origin-when-cross-origin"
-                allowFullScreen
+                poster="/media/spiral-belt-animation-poster.webp"
+                playLabel={t("play")}
               />
             </div>
             <p className="text-sm text-muted-foreground">{t("videoAnimation")}</p>
@@ -47,9 +45,10 @@ export function Technique() {
             <video
               className="h-full w-full"
               src="/media/dijker_aandrijving.mp4"
+              poster="/media/dijker_aandrijving-poster.webp"
               controls
               playsInline
-              preload="metadata"
+              preload="none"
             />
           </div>
           <p className="text-sm text-muted-foreground">{t("videoDrive")}</p>

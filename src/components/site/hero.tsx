@@ -1,31 +1,25 @@
 import { Button } from "@/components/ui/button";
+import { HeroVideo } from "@/components/site/hero-video";
 import { useTranslations } from "next-intl";
-import { preload } from "react-dom";
-
-const poster = "/media/relaxen-poster.webp";
+import Image from "next/image";
 
 export function Hero() {
   const t = useTranslations("hero");
-  // The poster is the LCP element but only gets discovered once the <video>
-  // is parsed, so hint it to the browser up front.
-  preload(poster, { as: "image", fetchPriority: "high" });
 
   return (
     <section
       id="top"
       className="relative isolate flex min-h-[85svh] items-end overflow-hidden bg-black text-white"
     >
-      <video
-        className="absolute inset-0 -z-20 h-full w-full object-cover"
-        src="/media/relaxen.mp4"
-        poster={poster}
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="auto"
-        aria-hidden="true"
+      <Image
+        src="/media/relaxen-poster.webp"
+        alt=""
+        fill
+        priority
+        sizes="100vw"
+        className="-z-30 object-cover"
       />
+      <HeroVideo src="/media/relaxen.mp4" />
       <div className="absolute inset-0 -z-10 bg-gradient-to-t from-black/80 via-black/45 to-black/20" />
 
       <div className="mx-auto w-full max-w-6xl px-6 pb-16 pt-28 md:pb-24 md:pt-36">
