@@ -49,6 +49,7 @@
     }
   },
   "technique": {
+    "play": "Play",
     "heading": "The technique",
     "chassisTitle": "The chassis",
     "chassis": "Everything is mounted on the chassis, a flat plate. It holds the suspension, steering rack, pedal guides and brake distribution. The brake cables, wiring and drive belts run through it, out of harm's way. The chassis is strong and light.",

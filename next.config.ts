@@ -7,9 +7,22 @@ const nextConfig: NextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  // Media filenames aren't content-hashed, so cache for a week instead of forever.
   async headers() {
     return [
+      {
+        source: "/:path*",
+        headers: [
+          { key: "Strict-Transport-Security", value: "max-age=31536000" },
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          { key: "X-Frame-Options", value: "DENY" },
+          { key: "Cross-Origin-Opener-Policy", value: "same-origin" },
+          {
+            key: "Referrer-Policy",
+            value: "strict-origin-when-cross-origin",
+          },
+        ],
+      },
+      // Media filenames aren't content-hashed, so cache for a week instead of forever.
       {
         source: "/media/:path*",
         headers: [
