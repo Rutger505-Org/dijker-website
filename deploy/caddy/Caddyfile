@@ -4,24 +4,19 @@
 	}
 }
 
-# dijker.eu is the only host that may be indexed. Until it goes live,
-# BASE_DOMAIN is a development domain that must stay out of search results.
+# dijker.eu is the only host that may be indexed. Previews, and the temporary
+# domain the site runs on until the switch, must stay out of search results.
 (noindex_unless_canonical) {
 	@not_canonical not host dijker.eu
 	header @not_canonical X-Robots-Tag "noindex, nofollow"
 }
 
-{$BASE_DOMAIN} {
-	import noindex_unless_canonical
-	encode
-	reverse_proxy production:3000
-}
-
-# Old Strato site. Every known URL gets a 301 to its matching section so its
+# URLs of the old Strato site, mapped to their matching section so their
 # ranking carries over. Dutch slugs are from the pre-2024 Dutch version, English
-# ones from the current site; unknown paths fall back to the English home page.
-dijkersite.eu, www.dijkersite.eu {
-	map {path} {new_path} {
+# ones from the current site. dijker.eu used to forward to dijkersite.eu with
+# the path intact, so both domains can receive these.
+(legacy_paths) {
+	map {path} {legacy_path} {
 		~^/the-dijker(/.*)?$ /en/#dijker
 		~^/the-technique(/.*)?$ /en/#technique
 		~^/the-creator(/.*)?$ /en/#creator
@@ -35,9 +30,29 @@ dijkersite.eu, www.dijkersite.eu {
 		~/Eusupino2020_Dijker\.pdf$ /media/EHPVA-magazine-2020.pdf
 		~/\.relaxen\.mp4/video\.mp4$ /media/relaxen.mp4
 		"~/\.dijker aandrijving\.mp4/video\.mp4$" /media/dijker_aandrijving.mp4
-		default /en/
+		default ""
 	}
-	redir https://{$BASE_DOMAIN}{new_path} permanent
+	@legacy expression {legacy_path} != ""
+}
+
+{$BASE_DOMAIN} {
+	import legacy_paths
+	redir @legacy {legacy_path} permanent
+
+	import noindex_unless_canonical
+	encode
+	reverse_proxy production:3000
+}
+
+www.{$BASE_DOMAIN} {
+	redir https://{$BASE_DOMAIN}{uri} permanent
+}
+
+# Unknown paths of the old site fall back to the English home page.
+dijkersite.eu, www.dijkersite.eu {
+	import legacy_paths
+	redir @legacy https://{$BASE_DOMAIN}{legacy_path} permanent
+	redir https://{$BASE_DOMAIN}/en/ permanent
 }
 
 *.{$BASE_DOMAIN} {
