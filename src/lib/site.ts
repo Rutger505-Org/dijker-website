@@ -1,12 +1,8 @@
 import { routing } from "@/i18n/routing";
 
-/**
- * Canonical production origin, used for metadataBase, canonical URLs,
- * hreflang alternates, sitemap and JSON-LD. Previews deliberately keep pointing
- * at production so they never compete with it in search results.
- */
+// Canonical production origin, baked in at build time from BASE_DOMAIN.
 export const siteUrl = (
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://dijker.rutgerpronk.com"
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://dijker.eu"
 ).replace(/\/$/, "");
 
 export const siteName = "the dijker";
