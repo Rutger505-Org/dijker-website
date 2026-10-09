@@ -4,7 +4,15 @@
 	}
 }
 
+# dijker.eu is the only host that may be indexed. Until it goes live,
+# BASE_DOMAIN is a development domain that must stay out of search results.
+(noindex_unless_canonical) {
+	@not_canonical not host dijker.eu
+	header @not_canonical X-Robots-Tag "noindex, nofollow"
+}
+
 {$BASE_DOMAIN} {
+	import noindex_unless_canonical
 	encode
 	reverse_proxy production:3000
 }
@@ -39,8 +47,8 @@ dijkersite.eu, www.dijkersite.eu {
 
 	@preview header_regexp preview Host ^(pr-[0-9]+)[.]
 	handle @preview {
+		import noindex_unless_canonical
 		encode
-		header X-Robots-Tag "noindex, nofollow"
 		reverse_proxy {re.preview.1}:3000
 	}
 

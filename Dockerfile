@@ -27,6 +27,8 @@ FROM base AS builder
 
 # Client side environment variables must be set here.
 # They won't be read from .env file during runtime
+ARG NEXT_PUBLIC_SITE_URL
+ENV NEXT_PUBLIC_SITE_URL=$NEXT_PUBLIC_SITE_URL
 
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
