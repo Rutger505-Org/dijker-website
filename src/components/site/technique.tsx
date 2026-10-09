@@ -19,6 +19,7 @@ export function Technique() {
                 className="h-full w-full"
                 src="https://www.youtube-nocookie.com/embed/ZofyjBrF9A8"
                 title="the dijker, spiral belt drive animation"
+                loading="lazy"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerPolicy="strict-origin-when-cross-origin"
                 allowFullScreen

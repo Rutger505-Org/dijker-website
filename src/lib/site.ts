@@ -2,8 +2,8 @@ import { routing } from "@/i18n/routing";
 
 /**
  * Canonical production origin, used for metadataBase, canonical URLs,
- * hreflang alternates, sitemap and JSON-LD. Override with NEXT_PUBLIC_SITE_URL
- * for preview environments if desired.
+ * hreflang alternates, sitemap and JSON-LD. Previews deliberately keep pointing
+ * at production so they never compete with it in search results.
  */
 export const siteUrl = (
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://dijker.rutgerpronk.com"
@@ -11,24 +11,31 @@ export const siteUrl = (
 
 export const siteName = "the dijker";
 
-export const ogImage = "/media/img007.webp";
+export const ogImage = {
+  url: "/media/og-image.jpg",
+  width: 1200,
+  height: 630,
+  type: "image/jpeg",
+};
 
-/**
- * Build the localized path for a locale. With next-intl `localePrefix: "always"`
- * every locale (including the default) is served under its own prefix.
- */
+export const ogLocales: Record<string, string> = {
+  nl: "nl_NL",
+  en: "en_US",
+};
+
 export function localePath(locale: string): string {
   return `/${locale}`;
 }
 
-/**
- * hreflang alternates map for a given base path (root only for this one-pager).
- */
+export function localeUrl(locale: string): string {
+  return `${siteUrl}${localePath(locale)}`;
+}
+
 export function languageAlternates(): Record<string, string> {
   const alternates: Record<string, string> = {};
   for (const locale of routing.locales) {
-    alternates[locale] = `${siteUrl}${localePath(locale)}`;
+    alternates[locale] = localeUrl(locale);
   }
-  alternates["x-default"] = `${siteUrl}${localePath(routing.defaultLocale)}`;
+  alternates["x-default"] = localeUrl(routing.defaultLocale);
   return alternates;
 }

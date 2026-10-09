@@ -95,7 +95,13 @@
     "success": "Bedankt, je bericht is verstuurd.",
     "error": "Het versturen is mislukt. Probeer het nog een keer."
   },
+  "notFound": {
+    "heading": "Pagina niet gevonden",
+    "body": "Deze pagina bestaat niet (meer). Misschien vind je wat je zoekt op de homepage.",
+    "home": "Naar de homepage"
+  },
   "footer": {
+    "language": "Taal",
     "tagline": "move yourself",
     "trademark": "spiral belt drive multispeed® is een geregistreerd handelsmerk.",
     "rights": "Alle rechten voorbehouden."
