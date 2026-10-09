@@ -29,6 +29,7 @@ jobs:
         id: config
         env:
           BASE_DOMAIN: ${{ vars.BASE_DOMAIN }}
+          DEV_DOMAIN: ${{ vars.DEV_DOMAIN }}
           APPLICATION_NAME: ${{ vars.APPLICATION_NAME }}
           DOCKERHUB_USERNAME: ${{ vars.DOCKERHUB_USERNAME }}
           VM_HOST: ${{ vars.VM_HOST }}
@@ -39,7 +40,7 @@ jobs:
           set -euo pipefail
 
           missing=()
-          for name in BASE_DOMAIN APPLICATION_NAME DOCKERHUB_USERNAME VM_HOST VM_USER VM_KNOWN_HOSTS; do
+          for name in BASE_DOMAIN DEV_DOMAIN APPLICATION_NAME DOCKERHUB_USERNAME VM_HOST VM_USER VM_KNOWN_HOSTS; do
             [ -z "${!name:-}" ] && missing+=("$name")
           done
           if [ ${#missing[@]} -gt 0 ]; then
@@ -57,7 +58,7 @@ jobs:
           else
             environment="pr-${PR_NUMBER}"
             is_production=false
-            hostname="pr-${PR_NUMBER}.$BASE_DOMAIN"
+            hostname="pr-${PR_NUMBER}.$DEV_DOMAIN"
           fi
 
           image="$DOCKERHUB_USERNAME/$APPLICATION_NAME:${{ github.sha }}"
@@ -126,6 +127,7 @@ jobs:
       IMAGE: ${{ needs.configure.outputs.image }}
       DEPLOY_HOSTNAME: ${{ needs.configure.outputs.hostname }}
       BASE_DOMAIN: ${{ vars.BASE_DOMAIN }}
+      DEV_DOMAIN: ${{ vars.DEV_DOMAIN }}
 
     steps:
       - name: Checkout repository
@@ -169,7 +171,7 @@ jobs:
         run: |
           ssh vm bash -euo pipefail <<EOF
           cd dijker-website
-          export BASE_DOMAIN='$BASE_DOMAIN' ENVIRONMENT='$ENVIRONMENT' APP_IMAGE='$IMAGE' ENV_FILE='env/$ENVIRONMENT.env'
+          export BASE_DOMAIN='$BASE_DOMAIN' DEV_DOMAIN='$DEV_DOMAIN' ENVIRONMENT='$ENVIRONMENT' APP_IMAGE='$IMAGE' ENV_FILE='env/$ENVIRONMENT.env'
 
           docker compose -f compose.proxy.yml up -d
           # A freshly created Caddy may not have its admin API up yet. exec reads

@@ -9,6 +9,7 @@ services:
       - "443:443/udp"
     environment:
       BASE_DOMAIN: ${BASE_DOMAIN:?}
+      DEV_DOMAIN: ${DEV_DOMAIN:?}
     volumes:
       - ./caddy:/etc/caddy:ro
       # Holds the issued certificates and ACME account; losing it forces
