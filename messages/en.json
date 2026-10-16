@@ -16,27 +16,27 @@
     "slogan": "move yourself",
     "title": "the dijker",
     "lead": "The dijker looks like it has been on the road for decades. Yet nothing like it existed before.",
-    "sub": "Under that classic shape sits new engineering. The dijker runs on the spiral belt drive multispeed®, a drive no other vehicle has.",
+    "sub": "The dijker has pedals, and that is the only analogy with a bicycle drive! The dijker has a completely newly developed mechanism, the spiral belt drive multispeed®.",
     "cta": "Watch the video",
-    "contactCta": "Get in touch"
+    "contactCta": "Get in touch",
+    "teaserTitle": "the dijker, teaser"
   },
   "dijker": {
-    "heading": "Highlights at a glance",
-    "intro": "Five things that set the dijker apart.",
-    "body1": "The dijker has four wheels and a small steering wheel. To brake, you push that steering wheel in. The pedals move back and forth in a straight line, left and right independently. The body comes in two parts: an open luggage compartment, the boot, and a nose cover. Both come off in seconds.",
-    "body2": "There are no brake levers. There are no gear levers either, because you shift by moving your toes backwards. It rides like nothing you have tried before, and it is a lot of fun.",
+    "heading": "The dijker basics",
+    "body": "The dijker has four wheels and a small steering wheel. To brake, you push that steering wheel in. The pedals move back and forth in a straight line, left and right independently. The body comes in two parts: an open luggage compartment, the boot, and a nose cover. Both come off in seconds.",
+    "highlightsHeading": "Five highlights",
     "props": {
       "comfort": {
         "title": "comfort",
-        "text": "Made for commuters who now take the car, a motorbike or public transport. You sit leaning back and stay dry, so you arrive rested. With the nose cover on there is still plenty of airflow, and you can hang your jacket over the open-fabric backrest."
+        "text": "Made for commuters who now take the car, a motorbike or public transport. There is a comfortable, slightly recumbent seat. With the nose cover on there is still plenty of ventilation, and you can hang your jacket over the open-fabric backrest."
       },
       "protection": {
         "title": "protection",
-        "text": "Four sturdy wheels and a strong chassis keep you safe on the road. A small poncho between the boot and the nose cover keeps out cold and rain. A brightly coloured flag makes sure other traffic sees you."
+        "text": "Four sturdy wheels and a strong chassis keep you safe on the road. A brightly coloured flag makes sure other traffic sees you. Is it cold or raining? You are protected by a mini poncho between the boot and the nose cover."
       },
       "fast": {
         "title": "fast",
-        "text": "You push with both legs at once and the dijker weighs very little. That gives you a quick start from standstill, and at speed the streamlined shape helps."
+        "text": "You can push with both legs at the same time, and the dijker weighs very little. That gives you a quick start from standstill, and at speed the streamlined shape helps."
       },
       "free": {
         "title": "free",
@@ -46,15 +46,16 @@
         "title": "boot",
         "text": "At the back is one large luggage compartment with no dividers, the boot. It comes off as easily as the nose cover."
       }
-    }
+    },
+    "closing": "Furthermore: there are no brake handles, and no handles are required for changing gear either: the adjustment is done by moving your toes backwards. All handles have been designed away. <em>To ride a dijker is a new experience. To ride a dijker is fun.</em>"
   },
   "technique": {
     "play": "Play",
     "heading": "The technique",
     "chassisTitle": "The chassis",
-    "chassis": "Everything is mounted on the chassis, a flat plate. It holds the suspension, steering rack, pedal guides and brake distribution. The brake cables, wiring and drive belts run through it, out of harm's way. The chassis is strong and light.",
+    "chassis": "The chassis, a flat sandwich plate, has many integrated functions. It holds the suspension, steering rack, pedal guides and brake distribution. The brake cables, wiring and drive belts run through it, out of harm's way. The chassis is strong and light.",
     "driveTitle": "spiral belt drive multispeed®",
-    "drive": "Drive and gearing are one system. Each belt winds around the wheel axle in a spiral. While you push, belt length is added or taken away, which makes the diameter bigger or smaller. You can even shift down while standing still. A bicycle derailleur can't do that.",
+    "drive": "Drive and gearing are one system. Each belt winds around the wheel axle in a spiral. While you push, belt length is added or taken away, which makes the diameter bigger or smaller. You can even shift down while standing still. A bicycle derailleur can't do that. Watch the instructional video.",
     "brakesTitle": "Brakes",
     "brakes": "All four wheels have light-alloy drum brakes. You brake by pushing the steering wheel in, and the steering column passes that movement on. It sounds odd, but in practice it comes naturally.",
     "brakesAlt": "Steering and brakes of the dijker",
@@ -65,7 +66,8 @@
     "videoAnimation": "Animation of the spiral belt drive multispeed®. The belt winds around the wheel axle in a spiral.",
     "schematic": "3D design drawing of the dijker, showing the chassis, seat, steering and nose cover.",
     "schematicAlt": "Schematic 3D drawing of the dijker",
-    "videoDrive": "The spiral belt drive multispeed® in real life. Watch the belts wind around the wheel axle."
+    "videoDrive": "The spiral belt drive multispeed® in real life. Watch the belts wind around the wheel axle.",
+    "driveCta": "Play the animation"
   },
   "creator": {
     "heading": "The inventor",

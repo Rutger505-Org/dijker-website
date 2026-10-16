@@ -1,5 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { HeroVideo } from "@/components/site/hero-video";
+import { PlayVideoLink } from "@/components/site/play-video-link";
+import { teaserVideoId } from "@/components/site/teaser";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 
@@ -34,7 +36,9 @@ export function Hero() {
           <p className="text-white/75">{t("sub")}</p>
           <div className="flex flex-wrap gap-3 pt-2">
             <Button asChild size="lg">
-              <a href="#video">{t("cta")}</a>
+              <PlayVideoLink href="#video" videoId={teaserVideoId}>
+                {t("cta")}
+              </PlayVideoLink>
             </Button>
             <Button
               asChild

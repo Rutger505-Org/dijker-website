@@ -16,27 +16,27 @@
     "slogan": "move yourself",
     "title": "the dijker",
     "lead": "De dijker ziet eruit alsof hij al jaren rondrijdt. Toch bestond zo'n voertuig nog niet.",
-    "sub": "Onder die klassieke vorm zit nieuwe techniek. De dijker rijdt op de spiral belt drive multispeed®, een aandrijving die geen ander voertuig heeft.",
+    "sub": "De dijker heeft pedalen, en dat is dan ook de enige overeenkomst met een fietsaandrijving! De dijker heeft een compleet nieuw ontwikkelde aandrijving, de spiral belt drive multispeed®.",
     "cta": "Bekijk de video",
-    "contactCta": "Neem contact op"
+    "contactCta": "Neem contact op",
+    "teaserTitle": "the dijker, teaser"
   },
   "dijker": {
-    "heading": "Highlights op één rij",
-    "intro": "Vijf dingen die de dijker anders maken.",
-    "body1": "De dijker heeft vier wielen en een klein stuur. Wil je remmen, dan druk je dat stuur in. De pedalen bewegen in een rechte lijn heen en weer, links en rechts los van elkaar. De carrosserie bestaat uit twee delen: een open bagageruimte, de boot, en een neuskap. Beide haal je er zo af.",
-    "body2": "Remhendels zitten er niet op. Schakelhendels ook niet, want je schakelt door je tenen naar achteren te bewegen. Het rijdt anders dan alles wat je kent, en het is gewoon leuk.",
+    "heading": "De dijker basics",
+    "body": "De dijker heeft vier wielen en een klein stuur. Wil je remmen, dan druk je dat stuur in. De pedalen bewegen in een rechte lijn heen en weer, links en rechts los van elkaar. De carrosserie bestaat uit twee delen: een open bagageruimte, de boot, en een neuskap. Beide haal je er zo af.",
+    "highlightsHeading": "Vijf highlights",
     "props": {
       "comfort": {
         "title": "comfort",
-        "text": "Bedoeld voor forenzen die nu de auto, de motor of het openbaar vervoer nemen. Je zit half achterover en blijft droog, dus je komt uitgerust aan. Met de neuskap erop waait er nog genoeg lucht langs, en over de rugleuning van open stof hang je je jas."
+        "text": "Bedoeld voor forenzen die nu de auto, de motor of het openbaar vervoer nemen. Er is een comfortabele zitting die licht achterover neigt. Met de neuskap erop is er nog genoeg ventilatie, en over de rugleuning van open stof hang je je jas."
       },
       "protection": {
         "title": "bescherming",
-        "text": "Vier stevige wielen en een sterk chassis houden je veilig op de weg. Een kleine poncho tussen de boot en de neuskap houdt kou en regen tegen. De vlag in opvallende kleuren zorgt dat anderen je zien."
+        "text": "Vier stevige wielen en een sterk chassis houden je veilig op de weg. Een designvlag met opvallende kleuren zorgt dat het andere verkeer je ziet. Is het koud of regenachtig? Je wordt beschermd door een mini-poncho tussen de bagageruimte en de neuskap."
       },
       "fast": {
         "title": "snel",
-        "text": "Je duwt met beide benen tegelijk en de dijker weegt weinig. Daardoor trek je vlot op vanuit stilstand, en op snelheid helpt de gestroomlijnde vorm."
+        "text": "Je kan met beide benen tegelijk trappen, en de dijker weegt weinig. Daardoor trek je vlot op vanuit stilstand, en op snelheid helpt de gestroomlijnde vorm."
       },
       "free": {
         "title": "vrij",
@@ -46,15 +46,16 @@
         "title": "bagage",
         "text": "Achterin zit één grote bagageruimte zonder tussenschotten, de boot. Die haal je er net zo makkelijk af als de neuskap."
       }
-    }
+    },
+    "closing": "Tot slot: er zijn géén remhendels en géén hendels om de versnelling te veranderen. Die aanpassing gebeurt door je voorvoet naar achteren te bewegen. <em>Rijden in een dijker is een nieuwe ervaring. Rijden in een dijker is fun.</em>"
   },
   "technique": {
     "play": "Afspelen",
     "heading": "De techniek",
     "chassisTitle": "Het chassis",
-    "chassis": "Alles zit vast aan het chassis, een vlakke plaat. Daarin zitten de vering, het stuurhuis, de pedaalgeleiding en de remverdeling. De remkabels, de bedrading en de aandrijfriemen lopen er beschermd doorheen. Het chassis is sterk en licht.",
+    "chassis": "Het chassis, een vlakke sandwichplaat, heeft veel geïntegreerde functies. Daarin zitten de vering, het stuurhuis, de pedaalgeleiding en de remverdeling. De remkabels, de bedrading en de aandrijfriemen lopen er beschermd doorheen. Het chassis is sterk en licht.",
     "driveTitle": "spiral belt drive multispeed®",
-    "drive": "Aandrijving en versnelling zitten in één systeem. Elke riem wikkelt zich in een spiraal om de wielas. Tijdens het duwen komt er riem bij of gaat er riem af, en zo wordt de diameter groter of kleiner. Terugschakelen kan zelfs als je stilstaat. Met een derailleur op een fiets lukt dat niet.",
+    "drive": "Aandrijving en versnelling zitten in één systeem. Elke riem wikkelt zich in een spiraal om de wielas. Tijdens het duwen komt er riem bij of gaat er riem af, en zo wordt de diameter groter of kleiner. Terugschakelen kan zelfs als je stilstaat. Met een derailleur op een fiets lukt dat niet. Zie de instructievideo.",
     "brakesTitle": "Remmen",
     "brakes": "Alle vier de wielen hebben een trommelrem van lichtmetaal. Je remt door het stuur in te drukken, de stuurkolom geeft die beweging door. Dat klinkt vreemd, maar in de praktijk doe je het vanzelf goed.",
     "brakesAlt": "Stuur en remmen van de dijker",
@@ -65,7 +66,8 @@
     "videoAnimation": "Animatie van de spiral belt drive multispeed®. De riem wikkelt zich in een spiraal om de wielas.",
     "schematic": "3D-ontwerptekening van de dijker, met chassis, zitting, stuur en neuskap.",
     "schematicAlt": "Schematische 3D-tekening van de dijker",
-    "videoDrive": "De spiral belt drive multispeed® in het echt. Je ziet de riemen om de wielas wikkelen."
+    "videoDrive": "De spiral belt drive multispeed® in het echt. Je ziet de riemen om de wielas wikkelen.",
+    "driveCta": "Speel de animatie af"
   },
   "creator": {
     "heading": "De uitvinder",

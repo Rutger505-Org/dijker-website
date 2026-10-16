@@ -1,5 +1,6 @@
 import { Header } from "@/components/site/header";
 import { Hero } from "@/components/site/hero";
+import { Teaser } from "@/components/site/teaser";
 import { Properties } from "@/components/site/properties";
 import { Technique } from "@/components/site/technique";
 import { Creator } from "@/components/site/creator";
@@ -70,6 +71,7 @@ export default async function HomePage({
       <Header />
       <main className="scroll-smooth">
         <Hero />
+        <Teaser />
         <Properties />
         <Technique />
         <Creator />
