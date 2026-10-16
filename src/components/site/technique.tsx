@@ -1,7 +1,11 @@
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import { Award } from "lucide-react";
+import { Award, Play } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { PlayVideoLink } from "@/components/site/play-video-link";
 import { YouTubeEmbed } from "@/components/site/youtube-embed";
+
+const animationVideoId = "ZofyjBrF9A8";
 
 export function Technique() {
   const t = useTranslations("technique");
@@ -13,48 +17,7 @@ export function Technique() {
           {t("heading")}
         </h2>
 
-        <div id="video" className="mt-10 grid gap-6 scroll-mt-24 md:grid-cols-2">
-          <div className="space-y-2">
-            <div className="aspect-video overflow-hidden rounded-xl border border-border bg-black">
-              <YouTubeEmbed
-                id="ZofyjBrF9A8"
-                title="the dijker, spiral belt drive animation"
-                poster="/media/spiral-belt-animation-poster.webp"
-                playLabel={t("play")}
-              />
-            </div>
-            <p className="text-sm text-muted-foreground">{t("videoAnimation")}</p>
-          </div>
-          <div className="space-y-2">
-            <div className="aspect-video overflow-hidden rounded-xl border border-border bg-[#d1dadb]">
-              <Image
-                src="/media/alibre.webp"
-                alt={t("schematicAlt")}
-                width={1072}
-                height={805}
-                sizes="(min-width: 768px) 50vw, 100vw"
-                className="h-full w-full object-contain"
-              />
-            </div>
-            <p className="text-sm text-muted-foreground">{t("schematic")}</p>
-          </div>
-        </div>
-
-        <div className="mt-6 space-y-2">
-          <div className="aspect-video overflow-hidden rounded-xl border border-border bg-black">
-            <video
-              className="h-full w-full"
-              src="/media/dijker_aandrijving.mp4"
-              poster="/media/dijker_aandrijving-poster.webp"
-              controls
-              playsInline
-              preload="none"
-            />
-          </div>
-          <p className="text-sm text-muted-foreground">{t("videoDrive")}</p>
-        </div>
-
-        <div className="mt-14 grid gap-10 md:grid-cols-2">
+        <div className="mt-10 grid gap-10 md:grid-cols-2">
           <div className="space-y-8">
             <div className="space-y-2">
               <h3 className="text-xl font-semibold">{t("chassisTitle")}</h3>
@@ -63,6 +26,12 @@ export function Technique() {
             <div className="space-y-2">
               <h3 className="text-xl font-semibold">{t("driveTitle")}</h3>
               <p className="text-muted-foreground">{t("drive")}</p>
+              <Button asChild variant="outline" className="mt-2">
+                <PlayVideoLink href="#animation" videoId={animationVideoId}>
+                  <Play className="fill-current" />
+                  {t("driveCta")}
+                </PlayVideoLink>
+              </Button>
             </div>
             <div className="space-y-2">
               <h3 className="text-xl font-semibold">{t("brakesTitle")}</h3>
@@ -107,6 +76,47 @@ export function Technique() {
               </div>
             </div>
           </div>
+        </div>
+
+        <div className="mt-14 grid gap-6 md:grid-cols-2">
+          <div id="animation" className="scroll-mt-24 space-y-2">
+            <div className="aspect-video overflow-hidden rounded-xl border border-border bg-black">
+              <YouTubeEmbed
+                id={animationVideoId}
+                title="the dijker, spiral belt drive animation"
+                poster="/media/spiral-belt-animation-poster.webp"
+                playLabel={t("play")}
+              />
+            </div>
+            <p className="text-sm text-muted-foreground">{t("videoAnimation")}</p>
+          </div>
+          <div className="space-y-2">
+            <div className="aspect-video overflow-hidden rounded-xl border border-border bg-[#d1dadb]">
+              <Image
+                src="/media/alibre.webp"
+                alt={t("schematicAlt")}
+                width={1072}
+                height={805}
+                sizes="(min-width: 768px) 50vw, 100vw"
+                className="h-full w-full object-contain"
+              />
+            </div>
+            <p className="text-sm text-muted-foreground">{t("schematic")}</p>
+          </div>
+        </div>
+
+        <div className="mt-6 space-y-2">
+          <div className="aspect-video overflow-hidden rounded-xl border border-border bg-black">
+            <video
+              className="h-full w-full"
+              src="/media/dijker_aandrijving.mp4"
+              poster="/media/dijker_aandrijving-poster.webp"
+              controls
+              playsInline
+              preload="none"
+            />
+          </div>
+          <p className="text-sm text-muted-foreground">{t("videoDrive")}</p>
         </div>
       </div>
     </section>

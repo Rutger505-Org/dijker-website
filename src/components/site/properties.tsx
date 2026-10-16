@@ -13,15 +13,17 @@ export function Properties() {
           <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
             {t("heading")}
           </h2>
-          <p className="text-lg text-muted-foreground">{t("intro")}</p>
         </div>
 
-        <div className="mt-10 grid gap-6 text-foreground/90 md:grid-cols-2">
-          <p>{t("body1")}</p>
-          <p>{t("body2")}</p>
-        </div>
+        <p className="mt-8 max-w-3xl text-lg text-foreground/90 md:text-xl">
+          {t("body")}
+        </p>
 
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+        <h3 className="mt-14 text-2xl font-semibold tracking-tight">
+          {t("highlightsHeading")}
+        </h3>
+
+        <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
           {items.map((key) => (
             <div
               key={key}
@@ -36,9 +38,9 @@ export function Properties() {
                 className="h-auto w-full"
               />
               <div className="p-6 pt-4">
-                <h3 className="text-lg font-semibold">
+                <h4 className="text-lg font-semibold">
                   {t(`props.${key}.title`)}
-                </h3>
+                </h4>
                 <p className="mt-2 text-sm text-muted-foreground">
                   {t(`props.${key}.text`)}
                 </p>
@@ -46,6 +48,10 @@ export function Properties() {
             </div>
           ))}
         </div>
+
+        <p className="mt-14 max-w-3xl text-lg text-foreground/90 md:text-xl">
+          {t.rich("closing", { em: (chunks) => <em>{chunks}</em> })}
+        </p>
       </div>
     </section>
   );

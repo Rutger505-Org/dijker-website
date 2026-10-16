@@ -2,7 +2,14 @@
 
 import Image from "next/image";
 import { Play } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+const playEvent = "dijker:play-video";
+
+// Lets a button elsewhere on the page start a specific embed.
+export function playVideo(id: string) {
+  window.dispatchEvent(new CustomEvent<string>(playEvent, { detail: id }));
+}
 
 // The YouTube player costs ~850 KB of JS/CSS, so it only loads once someone
 // actually wants to watch.
@@ -18,6 +25,14 @@ export function YouTubeEmbed({
   playLabel: string;
 }) {
   const [playing, setPlaying] = useState(false);
+
+  useEffect(() => {
+    const onPlay = (event: Event) => {
+      if ((event as CustomEvent<string>).detail === id) setPlaying(true);
+    };
+    window.addEventListener(playEvent, onPlay);
+    return () => window.removeEventListener(playEvent, onPlay);
+  }, [id]);
 
   if (playing) {
     return (
