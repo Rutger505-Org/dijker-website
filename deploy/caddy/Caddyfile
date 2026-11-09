@@ -55,7 +55,9 @@ dijkersite.eu, www.dijkersite.eu {
 	redir https://{$BASE_DOMAIN}/en/ permanent
 }
 
-*.{$BASE_DOMAIN} {
+# Previews live on a separate domain with wildcard DNS (Strato, which hosts the
+# dijker.eu DNS, has no wildcard records).
+*.{$PREVIEW_DOMAIN} {
 	tls {
 		on_demand
 	}

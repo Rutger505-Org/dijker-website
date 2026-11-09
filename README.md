@@ -29,7 +29,8 @@ bun dev
 #### Variables
 
 - `APPLICATION_NAME` - Docker Hub image name.
-- `BASE_DOMAIN` - Domain where to host the application. `main` is deployed to this domain; pull requests to `pr-<number>.<BASE_DOMAIN>`.
+- `BASE_DOMAIN` - Domain where to host the application. `main` is deployed to this domain.
+- `PREVIEW_DOMAIN` - Domain for pull request previews: `pr-<number>.<PREVIEW_DOMAIN>`. Separate from `BASE_DOMAIN` because the DNS host of `BASE_DOMAIN` (Strato) has no wildcard records.
 - `VM_HOST` - Public IP or hostname of the deploy VM.
 - `VM_USER` - SSH user on the VM (`dijker`).
 - `VM_KNOWN_HOSTS` - The VM's SSH host key line(s), from `ssh-keyscan <VM_HOST>`.
@@ -63,7 +64,7 @@ The following secrets are configured at the organisation level and are inherited
 Everything runs on a single VM with Docker Compose, deployed over SSH by [deploy.yaml](.github/workflows/deploy.yaml):
 
 - Push to `main` → production on `<BASE_DOMAIN>`.
-- Pull request → preview on `pr-<number>.<BASE_DOMAIN>`, removed (including its database) when the PR closes.
+- Pull request → preview on `pr-<number>.<PREVIEW_DOMAIN>`, removed (including its database) when the PR closes.
 
 On the VM, `~/dijker-website/` holds the files from [deploy/](deploy) plus `env/<environment>.env`, all uploaded by CI:
 
@@ -77,7 +78,7 @@ To pass additional environment variables to the running container, create a GitH
 - Docker with the compose plugin.
 - A `dijker` user in the `docker` group, with the deploy public key in `~/.ssh/authorized_keys`.
 - Ports `22`, `80` and `443` open.
-- DNS `A` records for `<BASE_DOMAIN>` and `*.<BASE_DOMAIN>` pointing to the VM.
+- DNS `A` records for `<BASE_DOMAIN>`, `www.<BASE_DOMAIN>` and `*.<PREVIEW_DOMAIN>` pointing to the VM.
 - DNS `A` records for the old domain `dijkersite.eu` and `www.dijkersite.eu` pointing to the VM. Caddy 301-redirects every old page to its section on `<BASE_DOMAIN>` (see the [Caddyfile](deploy/caddy/Caddyfile)).
 
 ## Guides
