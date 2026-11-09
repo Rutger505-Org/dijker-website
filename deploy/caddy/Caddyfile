@@ -13,8 +13,9 @@
 
 # URLs of the old Strato site, mapped to their matching section so their
 # ranking carries over. Dutch slugs are from the pre-2024 Dutch version, English
-# ones from the current site. dijker.eu used to forward to dijkersite.eu with
-# the path intact, so both domains can receive these.
+# ones from the current site, *.html ones from myshelter.nl. dijker.eu used to
+# forward to dijkersite.eu with the path intact, so every old domain can
+# receive these.
 (legacy_paths) {
 	map {path} {legacy_path} {
 		~^/the-dijker(/.*)?$ /en/#dijker
@@ -26,6 +27,8 @@
 		~^/de-techniek(/.*)?$ /nl/#technique
 		~^/de-bedenker(/.*)?$ /nl/#creator
 		~^/investeren(/.*)?$ /nl/#investing
+		~^/contact\.html$ /nl/#contact
+		~^/invented-by\.html$ /nl/#creator
 		~/Ligfiets2020_3_Dijker\.pdf$ /media/Ligfiets-2020.pdf
 		~/Eusupino2020_Dijker\.pdf$ /media/EHPVA-magazine-2020.pdf
 		~/\.relaxen\.mp4/video\.mp4$ /media/relaxen.mp4
@@ -48,11 +51,29 @@ www.{$BASE_DOMAIN} {
 	redir https://{$BASE_DOMAIN}{uri} permanent
 }
 
-# Unknown paths of the old site fall back to the English home page.
-dijkersite.eu, www.dijkersite.eu {
+# Old domains: legacy pages go to their section, paths that already exist on
+# the new site (/nl, /en/...) keep their path, anything else goes to the
+# fallback page in args[0].
+(old_domain) {
 	import legacy_paths
 	redir @legacy https://{$BASE_DOMAIN}{legacy_path} permanent
-	redir https://{$BASE_DOMAIN}/en/ permanent
+	@current path /nl /nl/* /en /en/*
+	redir @current https://{$BASE_DOMAIN}{uri} permanent
+	redir https://{$BASE_DOMAIN}{args[0]} permanent
+}
+
+# The old Strato site was English.
+dijkersite.eu, www.dijkersite.eu {
+	import old_domain /en/
+}
+
+# / lets the locale middleware pick the language.
+dyker.org, www.dyker.org {
+	import old_domain /
+}
+
+myshelter.nl, www.myshelter.nl {
+	import old_domain /nl/
 }
 
 # Previews live on a separate domain with wildcard DNS (Strato, which hosts the
