@@ -34,6 +34,15 @@ export function Footer() {
           <p>
             © {year} the dijker. {t("rights")}
           </p>
+          <p className="text-xs">
+            {t("credit")}{" "}
+            <a
+              href={`https://rutgerpronk.com/${locale === "nl" ? "nl" : "en"}`}
+              className="underline-offset-4 hover:text-foreground hover:underline"
+            >
+              Rutger Pronk
+            </a>
+          </p>
         </div>
       </div>
     </footer>
