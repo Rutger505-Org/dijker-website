@@ -28,6 +28,7 @@ export async function structuredData(locale: string) {
         "@type": "Person",
         "@id": inventorId,
         name: t("creator.name"),
+        url: "https://www.youtube.com/@PeterPaulvanderVen",
         jobTitle: t("creator.role"),
         image: `${siteUrl}/media/uitvinder.webp`,
         worksFor: { "@id": organizationId },
