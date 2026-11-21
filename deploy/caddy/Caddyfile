@@ -18,17 +18,17 @@
 # receive these.
 (legacy_paths) {
 	map {path} {legacy_path} {
-		~^/the-dijker(/.*)?$ /en/#dijker
-		~^/the-technique(/.*)?$ /en/#technique
-		~^/the-creator(/.*)?$ /en/#creator
-		~^/investing(/.*)?$ /en/#investing
-		~^/contact(/.*)?$ /en/#contact
-		~^/de-dijker(/.*)?$ /nl/#dijker
-		~^/de-techniek(/.*)?$ /nl/#technique
-		~^/de-bedenker(/.*)?$ /nl/#creator
-		~^/investeren(/.*)?$ /nl/#investing
-		~^/contact\.html$ /nl/#contact
-		~^/invented-by\.html$ /nl/#creator
+		~^/the-dijker(/.*)?$ /en#dijker
+		~^/the-technique(/.*)?$ /en#technique
+		~^/the-creator(/.*)?$ /en#creator
+		~^/investing(/.*)?$ /en#investing
+		~^/contact(/.*)?$ /en#contact
+		~^/de-dijker(/.*)?$ /nl#dijker
+		~^/de-techniek(/.*)?$ /nl#technique
+		~^/de-bedenker(/.*)?$ /nl#creator
+		~^/investeren(/.*)?$ /nl#investing
+		~^/contact\.html$ /nl#contact
+		~^/invented-by\.html$ /nl#creator
 		~/Ligfiets2020_3_Dijker\.pdf$ /media/Ligfiets-2020.pdf
 		~/Eusupino2020_Dijker\.pdf$ /media/EHPVA-magazine-2020.pdf
 		~/\.relaxen\.mp4/video\.mp4$ /media/relaxen.mp4
@@ -64,7 +64,7 @@ www.{$BASE_DOMAIN} {
 
 # The old Strato site was English.
 dijkersite.eu, www.dijkersite.eu {
-	import old_domain /en/
+	import old_domain /en
 }
 
 # / lets the locale middleware pick the language.
@@ -73,7 +73,7 @@ dyker.org, www.dyker.org {
 }
 
 myshelter.nl, www.myshelter.nl {
-	import old_domain /nl/
+	import old_domain /nl
 }
 
 # Previews live on a separate domain with wildcard DNS (Strato, which hosts the
