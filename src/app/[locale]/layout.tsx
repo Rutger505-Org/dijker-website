@@ -8,15 +8,18 @@ import { hasLocale } from "next-intl";
 import { NextIntlClientProvider } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import type { Metadata, Viewport } from "next";
-import { Geist } from "next/font/google";
+import localFont from "next/font/local";
 import { notFound } from "next/navigation";
 import { type ReactNode } from "react";
 import { siteName, siteUrl } from "@/lib/site";
 import { structuredData } from "@/lib/structured-data";
 
-const geistSans = Geist({
+// Self-hosted (Fontsource variable, latin) so the Docker build needs no
+// network access to Google Fonts, which fails intermittently on CI runners.
+const geistSans = localFont({
+  src: "../../fonts/geist-latin-variable.woff2",
+  weight: "100 900",
   variable: "--font-geist-sans",
-  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
