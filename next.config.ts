@@ -7,6 +7,11 @@ const nextConfig: NextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  // Permanent, so Google consolidates "/" into "/nl" instead of indexing "/"
+  // as a duplicate of it. Runs before the locale middleware.
+  async redirects() {
+    return [{ source: "/", destination: "/nl", permanent: true }];
+  },
   async headers() {
     return [
       {
