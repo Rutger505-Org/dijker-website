@@ -1,6 +1,6 @@
-# Next template
+# dijker-website
 
-Next.js template for my personal needs.
+Website for the dijker ([dijker.eu](https://dijker.eu)). Built from [nextjs-template](https://github.com/Rutger505-Org/nextjs-template).
 
 ## Getting started
 
